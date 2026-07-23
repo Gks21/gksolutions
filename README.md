@@ -1,6 +1,21 @@
 # GK Solutions LLC — Website
 
-Static site for Greg Shaw / GK Solutions — independent developer, Southern Indiana.
+Multi-page service platform for GK Solutions — IT support, consulting, websites, custom software, setups, and media conversion.
+
+## Pages
+
+| Page | File | Description |
+|------|------|-------------|
+| Home | `index.html` | Hero, featured services, audience types, trust section |
+| Services | `services.html` | Full service catalog with details |
+| Pricing | `pricing.html` | Rates by client type + support plans |
+| Book | `book.html` | 7-step booking wizard with pricing preview |
+| Quote | `quote.html` | Project quote request form |
+| Media Conversion | `media-conversion.html` | VHS/DVD pricing, process, privacy |
+| Nonprofits | `nonprofits.html` | Nonprofit program overview |
+| About | `about.html` | Company background |
+| Contact | `contact.html` | Contact form and business details |
+| Policies | `policies.html` | Deposits, cancellations, payment, data |
 
 ## Preview locally
 
@@ -18,12 +33,7 @@ Forms submit to **support@gks.software** via [FormSubmit](https://formsubmit.co)
 - Site must be served over HTTP/HTTPS (not opened as a `file://` page)
 - First submission triggers an activation email to support@gks.software — click the link to enable delivery
 
-**Testing locally:** `python -m http.server 8080` then visit `http://localhost:8080`
-
-## Customize
-
-- **Email** — `support@gks.software` in `index.html` and `js/main.js`
-- **Copy** — Edit `index.html` directly
+Forms are handled in `js/main.js` (contact, quote) and `js/booking.js` (booking wizard).
 
 ## Deploy
 

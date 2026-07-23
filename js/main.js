@@ -7,6 +7,13 @@
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  const currentPage = document.body.dataset.page;
+  if (currentPage) {
+    document.querySelectorAll(`[data-nav="${currentPage}"]`).forEach((link) => {
+      link.setAttribute("aria-current", "page");
+    });
+  }
+
   if (header) {
     window.addEventListener("scroll", () => {
       header.classList.toggle("scrolled", window.scrollY > 20);
@@ -32,7 +39,7 @@
   }
 
   const revealEls = document.querySelectorAll(
-    ".service-card, .expect-card, .about-inner, .hero-brand-wrap, .hero-headline, .hero-subtitle, .hero-actions, .volunteer-content, .volunteer-form, .contact-info, .contact-form, .section-header, .tag-list, .process-steps"
+    ".service-card, .expect-card, .feature-card, .audience-card, .plan-card, .service-block, .trust-item, .about-inner, .hero-brand-wrap, .hero-headline, .hero-subtitle, .hero-actions, .volunteer-content, .volunteer-form, .contact-info, .contact-form, .section-header, .tag-list, .process-steps, .page-hero .container, .booking-wizard"
   );
   revealEls.forEach((el) => el.classList.add("reveal"));
 
@@ -156,8 +163,22 @@
       e.preventDefault();
       submitForm(contactForm, {
         noteId: "form-note",
-        successMessage: "Message sent — I'll get back to you soon.",
-        subject: (data) => `Project inquiry from ${data.get("name")}`,
+        successMessage: "Message sent — we'll get back to you soon.",
+        subject: (data) => `Contact from ${data.get("name")}`,
+      });
+    });
+  }
+
+  const quoteForm = document.getElementById("quote-form");
+  if (quoteForm) {
+    quoteForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      submitForm(quoteForm, {
+        noteId: "quote-form-note",
+        successMessage:
+          "Quote request received — we'll review your project and follow up with next steps.",
+        subject: (data) =>
+          `Quote request: ${data.get("project_type")} — ${data.get("name")}`,
       });
     });
   }
@@ -168,7 +189,7 @@
       e.preventDefault();
       submitForm(volunteerForm, {
         noteId: "volunteer-form-note",
-        successMessage: "Message sent — I'll be in touch if it's a good fit.",
+        successMessage: "Message sent — we'll be in touch if it's a good fit.",
         subject: (data) =>
           `Community inquiry — ${data.get("organization") || data.get("name")}`,
       });

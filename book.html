@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a service with GK Solutions — schedule IT support, consultations, setup, and media conversion pickup." />
+  <meta name="theme-color" content="#232323" />
+  <title>Book a Service — GK Solutions</title>
+  <link rel="icon" href="img/gks_favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="book">
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img src="img/gks_logo_tp.png" alt="GK Solutions" class="logo-mark" width="48" height="48" />
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" data-nav="home">Home</a></li>
+        <li><a href="services.html" data-nav="services">Services</a></li>
+        <li><a href="pricing.html" data-nav="pricing">Pricing</a></li>
+        <li><a href="book.html" data-nav="book">Book</a></li>
+        <li><a href="nonprofits.html" data-nav="nonprofits">Nonprofits</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+        <li><a href="contact.html" data-nav="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="book.html" class="btn btn-primary btn-sm">Book a Service</a>
+        <a href="quote.html" class="btn btn-secondary btn-sm">Request a Quote</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <p class="section-eyebrow">Book a Service</p>
+        <h1 class="page-title">Schedule your appointment</h1>
+        <p class="page-lead">Choose your client type, select a service, and book a time. A $5 deposit reserves your appointment.</p>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container">
+        <div class="booking-wizard" id="booking-wizard">
+          <div class="booking-progress" id="booking-progress" aria-hidden="true">
+            <div class="booking-progress-step"></div>
+            <div class="booking-progress-step"></div>
+            <div class="booking-progress-step"></div>
+            <div class="booking-progress-step"></div>
+            <div class="booking-progress-step"></div>
+            <div class="booking-progress-step"></div>
+            <div class="booking-progress-step"></div>
+          </div>
+
+          <!-- Step 1: Client type -->
+          <div class="booking-panel active" data-step="1">
+            <p class="booking-step-label">Step 1 of 7</p>
+            <h2 class="booking-step-title">Choose client type</h2>
+            <p class="booking-step-desc">Pricing and availability vary by client type.</p>
+            <div class="choice-grid" id="client-type-choices">
+              <button type="button" class="choice-btn" data-value="individual"><strong>Individual</strong><span>Personal technology support</span></button>
+              <button type="button" class="choice-btn" data-value="small_business"><strong>Small Business</strong><span>Businesses and small teams</span></button>
+              <button type="button" class="choice-btn" data-value="nonprofit"><strong>Nonprofit</strong><span>Qualifying nonprofit organizations</span></button>
+              <button type="button" class="choice-btn" data-value="enterprise"><strong>Enterprise or Organization</strong><span>Larger organizations — custom quoted</span></button>
+            </div>
+          </div>
+
+          <!-- Step 2: Service -->
+          <div class="booking-panel" data-step="2">
+            <p class="booking-step-label">Step 2 of 7</p>
+            <h2 class="booking-step-title">Choose service</h2>
+            <p class="booking-step-desc">Select the type of help you need.</p>
+            <div class="choice-grid" id="service-choices"></div>
+          </div>
+
+          <!-- Step 3: Pricing -->
+          <div class="booking-panel" data-step="3">
+            <p class="booking-step-label">Step 3 of 7</p>
+            <h2 class="booking-step-title">Review pricing</h2>
+            <p class="booking-step-desc">Here's what to expect for your selection.</p>
+            <div class="pricing-preview" id="pricing-preview"></div>
+          </div>
+
+          <!-- Step 4: Intake -->
+          <div class="booking-panel" data-step="4">
+            <p class="booking-step-label">Step 4 of 7</p>
+            <h2 class="booking-step-title">Tell us about your needs</h2>
+            <p class="booking-step-desc">This helps us prepare for your appointment.</p>
+            <form id="intake-form" class="contact-form" style="padding:0;background:none;border:none;box-shadow:none">
+              <div class="form-group">
+                <label for="intake-name">Name</label>
+                <input type="text" id="intake-name" name="name" required placeholder="Your name" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="intake-email">Email</label>
+                  <input type="email" id="intake-email" name="email" required placeholder="you@example.com" />
+                </div>
+                <div class="form-group">
+                  <label for="intake-phone">Phone</label>
+                  <input type="tel" id="intake-phone" name="phone" placeholder="(555) 555-5555" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="intake-need">What do you need help with?</label>
+                <textarea id="intake-need" name="need" rows="3" required placeholder="Describe the issue or service needed"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="intake-device">What device or system is involved?</label>
+                <input type="text" id="intake-device" name="device" placeholder="e.g. Windows laptop, office printer" />
+              </div>
+              <div class="form-group">
+                <label for="intake-location">Is the service remote or on-site?</label>
+                <select id="intake-location" name="location" required>
+                  <option value="">Select…</option>
+                  <option value="remote">Remote</option>
+                  <option value="onsite">On-site</option>
+                  <option value="either">Either works</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="intake-previous">Has anyone previously worked on the issue?</label>
+                <textarea id="intake-previous" name="previous" rows="2" placeholder="Optional — what was tried?"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="intake-deadline">Is there a deadline?</label>
+                <input type="text" id="intake-deadline" name="deadline" placeholder="Optional" />
+              </div>
+              <div class="form-group">
+                <label for="intake-data">Are files or data involved?</label>
+                <select id="intake-data" name="data">
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                  <option value="unsure">Not sure</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 5: Date/time -->
+          <div class="booking-panel" data-step="5">
+            <p class="booking-step-label">Step 5 of 7</p>
+            <h2 class="booking-step-title">Choose date and time</h2>
+            <p class="booking-step-desc" id="schedule-desc">Select an available appointment window.</p>
+            <div class="form-group" style="margin-bottom:20px">
+              <label for="booking-date">Date</label>
+              <input type="date" id="booking-date" name="date" required />
+            </div>
+            <div class="time-slots" id="time-slots"></div>
+          </div>
+
+          <!-- Step 6: Deposit -->
+          <div class="booking-panel" data-step="6">
+            <p class="booking-step-label">Step 6 of 7</p>
+            <h2 class="booking-step-title">Pay deposit</h2>
+            <p class="booking-step-desc">A $5 deposit is required to reserve your appointment.</p>
+            <div class="deposit-notice">
+              <p><strong>For consultations:</strong> Refunded after the appointment, or applied toward approved work.</p>
+              <p style="margin-top:8px"><strong>For other services:</strong> Applied toward the final balance.</p>
+              <p style="margin-top:8px">The deposit is nonrefundable for missed appointments or late cancellations (within 24 hours). <a href="policies.html" style="color:var(--accent)">View policies →</a></p>
+            </div>
+            <div class="pricing-preview">
+              <h3>Deposit due now</h3>
+              <p class="highlight" style="font-size:1.5rem;color:var(--accent);font-weight:700">$5.00</p>
+              <p style="font-size:0.9rem;color:var(--text-muted);margin-top:8px">Payment processing will be connected here. For now, submitting confirms your booking request and deposit agreement.</p>
+            </div>
+          </div>
+
+          <!-- Step 7: Confirmation -->
+          <div class="booking-panel" data-step="7">
+            <p class="booking-step-label">Step 7 of 7</p>
+            <h2 class="booking-step-title">Booking confirmed</h2>
+            <div class="booking-confirmation" id="booking-confirmation"></div>
+          </div>
+
+          <div class="booking-nav" id="booking-nav">
+            <button type="button" class="btn btn-secondary" id="booking-back" hidden>Back</button>
+            <button type="button" class="btn btn-primary" id="booking-next">Continue</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand brand--footer">
+          <img src="img/gks_logo_tp.png" alt="" class="brand-mark" width="48" height="48" />
+          <img src="img/gks_txt_tp.png" alt="GK Solutions" class="brand-text" width="140" height="40" />
+        </a>
+        <p class="footer-tagline">Curiosity, Built In.</p>
+      </div>
+      <div class="footer-contact"><a href="mailto:support@gks.software">support@gks.software</a></div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="book.html">Book</a>
+        <a href="nonprofits.html">Nonprofits</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="policies.html">Policies</a>
+      </nav>
+      <p class="footer-copy">&copy; <span id="year"></span> GK Solutions LLC</p>
+    </div>
+  </footer>
+
+  <div class="mobile-actions" aria-label="Quick actions">
+    <a href="book.html" class="btn btn-primary">Book a Service</a>
+    <a href="quote.html" class="btn btn-secondary">Request a Quote</a>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
