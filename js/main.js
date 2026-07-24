@@ -7,13 +7,6 @@
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  const currentPage = document.body.dataset.page;
-  if (currentPage) {
-    document.querySelectorAll(`[data-nav="${currentPage}"]`).forEach((link) => {
-      link.setAttribute("aria-current", "page");
-    });
-  }
-
   if (header) {
     window.addEventListener("scroll", () => {
       header.classList.toggle("scrolled", window.scrollY > 20);

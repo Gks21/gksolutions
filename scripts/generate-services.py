@@ -158,16 +158,16 @@ TEMPLATE = """<!DOCTYPE html>
     <section class="page-hero">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
-        <p class="section-eyebrow"><a href="../services.html" style="color:var(--accent)">Services</a></p>
+        <p class="section-eyebrow"><a href="../services.html" class="breadcrumb-link">Services</a></p>
         <h1 class="page-title">{title}</h1>
         <p class="page-lead">{summary}</p>
       </div>
     </section>
 
     <section class="page-content">
-      <div class="container" style="max-width:720px">
-        <h2 class="section-title" style="font-size:1.1rem;margin-bottom:16px">What's included</h2>
-        <ul class="service-includes" style="margin-bottom:28px">
+      <div class="container content-narrow">
+        <h2 class="subsection-title">What's included</h2>
+        <ul class="service-includes u-mb-28">
 {includes_html}
         </ul>
         <p class="pricing-note">{note}</p>

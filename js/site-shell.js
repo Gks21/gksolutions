@@ -66,7 +66,6 @@
           <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="brand-text" width="140" height="40" />
         </a>
         <p class="footer-tagline">Curiosity, Built In.</p>
-        <p class="footer-byline">IT support, consulting, websites, software, and media conversion.</p>
       </div>
       <div class="footer-contact">
         <a href="mailto:support@gks.software">support@gks.software</a>
