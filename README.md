@@ -7,9 +7,11 @@ Multi-page service platform for GK Solutions — IT support, consulting, website
 | Page | File | Description |
 |------|------|-------------|
 | Home | `index.html` | Hero, featured services, audience types, trust section |
-| Services | `services.html` | Full service catalog with details |
-| Pricing | `pricing.html` | Rates by client type + support plans |
-| Book | `book.html` | 7-step booking wizard with pricing preview |
+| Services (browse) | `services.html` | Service catalog index with cards |
+| Service details | `services/*.html` | Individual pages per service |
+| Pricing | `pricing.html` | Hourly rates by client type |
+| Support Plans | `support-plans.html` | Prepaid support bundles |
+| Book | `book.html` | 7-step booking wizard |
 | Quote | `quote.html` | Project quote request form |
 | Media Conversion | `media-conversion.html` | VHS/DVD pricing, process, privacy |
 | Nonprofits | `nonprofits.html` | Nonprofit program overview |
@@ -24,6 +26,16 @@ python -m http.server 8080
 ```
 
 Visit [http://localhost:8080](http://localhost:8080).
+
+## Layout
+
+Shared header, footer, and mobile action bar are injected by `js/site-shell.js` on each page. Service pages in `services/` use `data-base=".."` for correct relative paths.
+
+To regenerate service detail pages after editing content:
+
+```bash
+python3 scripts/generate-services.py
+```
 
 ## Contact forms
 

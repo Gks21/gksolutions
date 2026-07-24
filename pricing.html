@@ -13,29 +13,7 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body data-page="pricing">
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">
-        <img src="img/gks_logo_tp.png" alt="GK Solutions" class="logo-mark" width="48" height="48" />
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" data-nav="home">Home</a></li>
-        <li><a href="services.html" data-nav="services">Services</a></li>
-        <li><a href="pricing.html" data-nav="pricing">Pricing</a></li>
-        <li><a href="book.html" data-nav="book">Book</a></li>
-        <li><a href="nonprofits.html" data-nav="nonprofits">Nonprofits</a></li>
-        <li><a href="about.html" data-nav="about">About</a></li>
-        <li><a href="contact.html" data-nav="contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="book.html" class="btn btn-primary btn-sm">Book a Service</a>
-        <a href="quote.html" class="btn btn-secondary btn-sm">Request a Quote</a>
-      </div>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
   <main>
     <section class="page-hero">
@@ -72,7 +50,7 @@
               <tr><td>On-site support</td><td class="price">$80 / hour</td></tr>
             </tbody>
           </table>
-          <p class="pricing-note">Common services may use fixed pricing. Larger setups, websites, software, networks, and migrations receive a written quote.</p>
+          <p class="pricing-note">Common services may use fixed pricing. Larger setups, websites, software, networks, and migrations receive a written quote. <a href="support-plans.html" style="color:var(--accent)">View support plans →</a></p>
         </div>
 
         <div class="pricing-section">
@@ -87,7 +65,7 @@
               <tr><td>Basic network services</td><td class="price">Starting at $75</td></tr>
             </tbody>
           </table>
-          <p class="pricing-note">Websites and custom software may be provided at no cost after review and approval. Approval considers project scope, community benefit, available capacity, required maintenance, hosting or licensing costs, and whether the organization can support the finished product. External costs such as hosting, hardware, licenses, domains, and paid services remain the nonprofit's responsibility unless specifically included. <a href="nonprofits.html" style="color:var(--accent)">Learn about the nonprofit program →</a></p>
+          <p class="pricing-note">Websites and custom software may be provided at no cost after review and approval. <a href="nonprofits.html" style="color:var(--accent)">Learn about the nonprofit program →</a> · <a href="support-plans.html" style="color:var(--accent)">View nonprofit support plans →</a></p>
         </div>
 
         <div class="pricing-section">
@@ -98,118 +76,22 @@
       </div>
     </section>
 
-    <section class="section-alt" id="support-plans">
-      <div class="container container--wide">
-        <div class="section-header section-header--center">
-          <p class="section-eyebrow">Support Plans</p>
-          <h2 class="section-title">Prepaid support bundles</h2>
-          <p class="section-desc">These are prepaid support bundles — not unlimited managed service agreements.</p>
-        </div>
-
-        <h3 style="font-size:1.2rem;margin-bottom:8px;">Pay-As-Needed</h3>
-        <p class="pricing-note" style="margin-bottom:32px">No recurring fee or contract. Clients request support when needed and pay the standard service rate. Best for individuals, very small businesses, and infrequent support needs.</p>
-
-        <h3 style="font-size:1.2rem;margin-bottom:20px;">Small Business Support Plans</h3>
-        <div class="plan-grid">
-          <article class="plan-card">
-            <p class="plan-name">Essential</p>
-            <p class="plan-price">$120 <span>/ month</span></p>
-            <ul class="plan-features">
-              <li>Up to 2 support hours</li>
-              <li>Remote or on-site use</li>
-              <li>Priority over pay-as-needed requests</li>
-              <li>Additional time billed at the standard rate</li>
-            </ul>
-          </article>
-          <article class="plan-card featured">
-            <p class="plan-name">Ongoing</p>
-            <p class="plan-price">$225 <span>/ month</span></p>
-            <ul class="plan-features">
-              <li>Up to 4 support hours</li>
-              <li>Priority scheduling</li>
-              <li>Basic advising</li>
-              <li>Additional time billed at the standard rate</li>
-            </ul>
-          </article>
-          <article class="plan-card">
-            <p class="plan-name">Business</p>
-            <p class="plan-price">$400 <span>/ month</span></p>
-            <ul class="plan-features">
-              <li>Up to 8 support hours</li>
-              <li>Priority scheduling</li>
-              <li>Documentation support</li>
-              <li>Periodic planning</li>
-              <li>Additional time billed at the standard rate</li>
-            </ul>
-          </article>
-        </div>
-        <p class="pricing-note" style="margin-bottom:48px">Unused hours may roll over for one month. Annual prepayment receives a 10% discount.</p>
-
-        <h3 style="font-size:1.2rem;margin-bottom:20px;">Nonprofit Support Plans</h3>
-        <div class="plan-grid">
-          <article class="plan-card">
-            <p class="plan-name">Community 2</p>
-            <p class="plan-price">$45 <span>/ month</span></p>
-            <ul class="plan-features"><li>Up to 2 support hours</li></ul>
-          </article>
-          <article class="plan-card">
-            <p class="plan-name">Community 4</p>
-            <p class="plan-price">$85 <span>/ month</span></p>
-            <ul class="plan-features"><li>Up to 4 support hours</li></ul>
-          </article>
-          <article class="plan-card">
-            <p class="plan-name">Community 8</p>
-            <p class="plan-price">$160 <span>/ month</span></p>
-            <ul class="plan-features"><li>Up to 8 support hours</li></ul>
-          </article>
-        </div>
-        <p class="pricing-note">Annual prepayment receives a 10% discount.</p>
-
-        <div class="plan-disclaimer">
-          Support plans are prepaid bundles of support hours — not unlimited managed service agreements. Hours are used as needed and additional time is billed at your standard rate.
-        </div>
-      </div>
-    </section>
-
     <section class="cta-band">
       <div class="container">
-        <h2>See a rate that fits?</h2>
+        <h2>Need ongoing support?</h2>
+        <p>Compare prepaid support bundles for small businesses and nonprofits.</p>
         <div class="hero-actions">
-          <a href="book.html" class="btn btn-primary">Book a Service</a>
-          <a href="quote.html" class="btn btn-secondary">Request a Quote</a>
+          <a href="support-plans.html" class="btn btn-primary">View Support Plans</a>
+          <a href="book.html" class="btn btn-secondary">Book a Service</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="brand brand--footer">
-          <img src="img/gks_logo_tp.png" alt="" class="brand-mark" width="48" height="48" />
-          <img src="img/gks_txt_tp.png" alt="GK Solutions" class="brand-text" width="140" height="40" />
-        </a>
-        <p class="footer-tagline">Curiosity, Built In.</p>
-      </div>
-      <div class="footer-contact"><a href="mailto:support@gks.software">support@gks.software</a></div>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="book.html">Book</a>
-        <a href="nonprofits.html">Nonprofits</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="policies.html">Policies</a>
-      </nav>
-      <p class="footer-copy">&copy; <span id="year"></span> GK Solutions LLC</p>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <div id="site-mobile-actions"></div>
 
-  <div class="mobile-actions" aria-label="Quick actions">
-    <a href="book.html" class="btn btn-primary">Book a Service</a>
-    <a href="quote.html" class="btn btn-secondary">Request a Quote</a>
-  </div>
-
+  <script src="js/site-shell.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

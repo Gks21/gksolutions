@@ -115,14 +115,31 @@
     if (note) note.hidden = true;
 
     try {
-      const response = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(buildPayload(form, options)),
-      });
+      const data = new FormData(form);
+      let response;
+
+      if (options.useFormData) {
+        data.append("_subject", options.subject(data));
+        data.append("_template", "table");
+        data.append("_captcha", "false");
+        const email = data.get("email");
+        if (email) data.append("_replyto", email);
+        data.delete("_gotcha");
+
+        response = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          body: data,
+        });
+      } else {
+        response = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(buildPayload(form, options)),
+        });
+      }
 
       let result = {};
       try {
@@ -179,6 +196,7 @@
           "Quote request received — we'll review your project and follow up with next steps.",
         subject: (data) =>
           `Quote request: ${data.get("project_type")} — ${data.get("name")}`,
+        useFormData: true,
       });
     });
   }

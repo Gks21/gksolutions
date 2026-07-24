@@ -14,29 +14,7 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body data-page="home">
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">
-        <img src="img/gks_logo_tp.png" alt="GK Solutions" class="logo-mark" width="48" height="48" />
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" data-nav="home">Home</a></li>
-        <li><a href="services.html" data-nav="services">Services</a></li>
-        <li><a href="pricing.html" data-nav="pricing">Pricing</a></li>
-        <li><a href="book.html" data-nav="book">Book</a></li>
-        <li><a href="nonprofits.html" data-nav="nonprofits">Nonprofits</a></li>
-        <li><a href="about.html" data-nav="about">About</a></li>
-        <li><a href="contact.html" data-nav="contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="book.html" class="btn btn-primary btn-sm">Book a Service</a>
-        <a href="quote.html" class="btn btn-secondary btn-sm">Request a Quote</a>
-      </div>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
   <main>
     <section class="hero">
@@ -77,31 +55,31 @@
           <p class="section-desc">From everyday troubleshooting to custom software and media conversion — each service starts with understanding what you actually need.</p>
         </div>
         <div class="feature-grid">
-          <a href="services.html#it-support" class="feature-card">
+          <a href="services/it-support.html" class="feature-card">
             <div class="feature-icon" aria-hidden="true">🛠</div>
             <h3>IT Support</h3>
             <p>Diagnose and resolve everyday technology problems — remotely or on-site.</p>
             <span class="card-link">Learn more →</span>
           </a>
-          <a href="services.html#setup" class="feature-card">
+          <a href="services/setup.html" class="feature-card">
             <div class="feature-icon" aria-hidden="true">⚙️</div>
             <h3>Setup Services</h3>
             <p>Installation and configuration of new or existing computers, devices, and software.</p>
             <span class="card-link">Learn more →</span>
           </a>
-          <a href="services.html#network" class="feature-card">
+          <a href="services/network.html" class="feature-card">
             <div class="feature-icon" aria-hidden="true">📶</div>
             <h3>Network &amp; Wi-Fi</h3>
             <p>Connectivity, coverage, and network equipment for homes and small offices.</p>
             <span class="card-link">Learn more →</span>
           </a>
-          <a href="services.html#websites" class="feature-card">
+          <a href="services/websites.html" class="feature-card">
             <div class="feature-icon" aria-hidden="true">🌐</div>
             <h3>Websites</h3>
             <p>Planning, building, improving, and maintaining websites that work for you.</p>
             <span class="card-link">Learn more →</span>
           </a>
-          <a href="services.html#software" class="feature-card">
+          <a href="services/custom-software.html" class="feature-card">
             <div class="feature-icon" aria-hidden="true">💻</div>
             <h3>Custom Software</h3>
             <p>Tools built around your organization's actual workflow and processes.</p>
@@ -171,36 +149,11 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="brand brand--footer">
-          <img src="img/gks_logo_tp.png" alt="" class="brand-mark" width="48" height="48" />
-          <img src="img/gks_txt_tp.png" alt="GK Solutions" class="brand-text" width="140" height="40" />
-        </a>
-        <p class="footer-tagline">Curiosity, Built In.</p>
-        <p class="footer-byline">IT support, consulting, websites, software, and media conversion.</p>
-      </div>
-      <div class="footer-contact">
-        <a href="mailto:support@gks.software">support@gks.software</a>
-      </div>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="book.html">Book</a>
-        <a href="nonprofits.html">Nonprofits</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="policies.html">Policies</a>
-      </nav>
-      <p class="footer-copy">&copy; <span id="year"></span> GK Solutions LLC</p>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <div id="site-mobile-actions"></div>
 
-  <div class="mobile-actions" aria-label="Quick actions">
-    <a href="book.html" class="btn btn-primary">Book a Service</a>
-    <a href="quote.html" class="btn btn-secondary">Request a Quote</a>
-  </div>
+  <script src="js/site-shell.js"></script>
+
 
   <script src="js/main.js"></script>
 </body>

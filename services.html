@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GK Solutions services — IT consulting, technical support, setup, networking, websites, custom software, contract support, and media conversion." />
+  <meta name="description" content="GK Solutions services — browse IT consulting, technical support, setup, networking, websites, custom software, contract support, and media conversion." />
   <meta name="theme-color" content="#232323" />
   <title>Services — GK Solutions</title>
   <link rel="icon" href="img/gks_favicon.png" type="image/png" />
@@ -13,29 +13,7 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body data-page="services">
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">
-        <img src="img/gks_logo_tp.png" alt="GK Solutions" class="logo-mark" width="48" height="48" />
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" data-nav="home">Home</a></li>
-        <li><a href="services.html" data-nav="services">Services</a></li>
-        <li><a href="pricing.html" data-nav="pricing">Pricing</a></li>
-        <li><a href="book.html" data-nav="book">Book</a></li>
-        <li><a href="nonprofits.html" data-nav="nonprofits">Nonprofits</a></li>
-        <li><a href="about.html" data-nav="about">About</a></li>
-        <li><a href="contact.html" data-nav="contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="book.html" class="btn btn-primary btn-sm">Book a Service</a>
-        <a href="quote.html" class="btn btn-secondary btn-sm">Request a Quote</a>
-      </div>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
   <main>
     <section class="page-hero">
@@ -49,178 +27,75 @@
 
     <section class="page-content">
       <div class="container container--wide">
-        <article class="service-block" id="consulting">
-          <h2>IT Consulting &amp; Advising</h2>
-          <p>Help evaluating technology needs, purchases, systems, workflows, security, and future plans.</p>
-          <h3>Includes</h3>
-          <ul class="service-includes">
-            <li>Technology recommendations</li>
-            <li>Project planning</li>
-            <li>Software selection</li>
-            <li>Process improvement</li>
-            <li>Upgrade planning</li>
-            <li>Vendor guidance</li>
-            <li>Basic security and backup planning</li>
-          </ul>
-          <p class="service-note">Consultations include discussion, intake, and recommendations. They do not include hands-on labor.</p>
-        </article>
-
-        <article class="service-block" id="it-support">
-          <h2>Technical Support</h2>
-          <p>Help diagnosing and resolving everyday technology problems.</p>
-          <h3>Includes</h3>
-          <ul class="service-includes">
-            <li>Computer troubleshooting</li>
-            <li>Software issues</li>
-            <li>Account and login problems</li>
-            <li>Printer troubleshooting</li>
-            <li>Device connectivity</li>
-            <li>Email configuration</li>
-            <li>Basic malware concerns</li>
-            <li>General technical assistance</li>
-          </ul>
-          <p class="service-note">Available remotely or on-site where appropriate.</p>
-        </article>
-
-        <article class="service-block" id="setup">
-          <h2>Setup Services</h2>
-          <p>Installation and configuration of new or existing technology.</p>
-          <h3>Includes</h3>
-          <ul class="service-includes">
-            <li>Computer setup</li>
-            <li>Device setup</li>
-            <li>Printer setup</li>
-            <li>Software installation</li>
-            <li>Account configuration</li>
-            <li>Data transfers</li>
-            <li>Home-office setup</li>
-            <li>Basic workstation setup</li>
-          </ul>
-        </article>
-
-        <article class="service-block" id="network">
-          <h2>Network &amp; Wi-Fi</h2>
-          <p>Help with connectivity, coverage, and network equipment.</p>
-          <h3>Includes</h3>
-          <ul class="service-includes">
-            <li>Router setup</li>
-            <li>Wi-Fi troubleshooting</li>
-            <li>Device connections</li>
-            <li>Coverage evaluation</li>
-            <li>Network equipment installation</li>
-            <li>Small-office network planning</li>
-            <li>Guest network setup</li>
-          </ul>
-          <p class="service-note">Hardware and equipment costs are separate.</p>
-        </article>
-
-        <article class="service-block" id="websites">
-          <h2>Website Services</h2>
-          <p>Planning, building, improving, or maintaining websites.</p>
-          <h3>Includes</h3>
-          <ul class="service-includes">
-            <li>New website development</li>
-            <li>Website redesigns</li>
-            <li>Content updates</li>
-            <li>Forms and integrations</li>
-            <li>Maintenance</li>
-            <li>Troubleshooting</li>
-            <li>Accessibility improvements</li>
-            <li>Hosting guidance</li>
-          </ul>
-          <p class="service-note">Website work should normally require a consultation and quote. <a href="quote.html" style="color: var(--accent);">Request a quote →</a></p>
-        </article>
-
-        <article class="service-block" id="software">
-          <h2>Custom Software</h2>
-          <p>Custom tools built around an organization's actual workflow.</p>
-          <h3>Includes</h3>
-          <ul class="service-includes">
-            <li>Internal applications</li>
-            <li>Employee portals</li>
-            <li>Request and approval systems</li>
-            <li>Workflow automation</li>
-            <li>Reporting tools</li>
-            <li>Dashboards</li>
-            <li>Integrations</li>
-            <li>Legacy system replacement</li>
-          </ul>
-          <p class="service-note">These services require evaluation, planning, and a custom quote. <a href="quote.html" style="color: var(--accent);">Request a quote →</a></p>
-        </article>
-
-        <article class="service-block" id="contract">
-          <h2>Contract IT Support</h2>
-          <p>Project-based or ongoing support for businesses and organizations.</p>
-          <h3>Includes</h3>
-          <ul class="service-includes">
-            <li>Temporary technical coverage</li>
-            <li>Project assistance</li>
-            <li>Deployments</li>
-            <li>Migrations</li>
-            <li>Documentation</li>
-            <li>Staff training</li>
-            <li>System support</li>
-            <li>Development support</li>
-          </ul>
-          <p class="service-note">Small-business options may use fixed pricing or support plans. Enterprise work is quote-only.</p>
-        </article>
-
-        <article class="service-block" id="media">
-          <h2>Media Conversion</h2>
-          <p>Conversion of personal media into accessible digital files.</p>
-          <h3>Includes</h3>
-          <ul class="service-includes">
-            <li>VHS to digital</li>
-            <li>Home-recorded DVD to digital</li>
-            <li>Pickup and return</li>
-            <li>Itemized receipt</li>
-            <li>Physical or cloud delivery</li>
-          </ul>
-          <p class="service-note">GK Solutions does not repair damaged media or provide cleanup and restoration. <a href="media-conversion.html" style="color: var(--accent);">View pricing and process →</a></p>
-        </article>
+        <div class="feature-grid">
+          <a href="services/consulting.html" class="feature-card">
+            <div class="feature-icon" aria-hidden="true">💡</div>
+            <h3>IT Consulting &amp; Advising</h3>
+            <p>Technology recommendations, project planning, security, and upgrade guidance.</p>
+            <span class="card-link">View service →</span>
+          </a>
+          <a href="services/it-support.html" class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🛠</div>
+            <h3>Technical Support</h3>
+            <p>Diagnose and resolve everyday technology problems — remotely or on-site.</p>
+            <span class="card-link">View service →</span>
+          </a>
+          <a href="services/setup.html" class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⚙️</div>
+            <h3>Setup Services</h3>
+            <p>Installation and configuration of computers, devices, printers, and software.</p>
+            <span class="card-link">View service →</span>
+          </a>
+          <a href="services/network.html" class="feature-card">
+            <div class="feature-icon" aria-hidden="true">📶</div>
+            <h3>Network &amp; Wi-Fi</h3>
+            <p>Connectivity, coverage, and network equipment for homes and small offices.</p>
+            <span class="card-link">View service →</span>
+          </a>
+          <a href="services/websites.html" class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🌐</div>
+            <h3>Website Services</h3>
+            <p>Planning, building, improving, and maintaining websites.</p>
+            <span class="card-link">View service →</span>
+          </a>
+          <a href="services/custom-software.html" class="feature-card">
+            <div class="feature-icon" aria-hidden="true">💻</div>
+            <h3>Custom Software</h3>
+            <p>Tools built around your organization's actual workflow.</p>
+            <span class="card-link">View service →</span>
+          </a>
+          <a href="services/contract-support.html" class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🤝</div>
+            <h3>Contract IT Support</h3>
+            <p>Project-based or ongoing support for businesses and organizations.</p>
+            <span class="card-link">View service →</span>
+          </a>
+          <a href="media-conversion.html" class="feature-card">
+            <div class="feature-icon" aria-hidden="true">📼</div>
+            <h3>Media Conversion</h3>
+            <p>Convert VHS and home-recorded DVDs into accessible digital files.</p>
+            <span class="card-link">View service →</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <section class="cta-band">
       <div class="container">
-        <h2>Ready to get started?</h2>
-        <p>Book a service for immediate needs, or request a quote for larger projects.</p>
+        <h2>Not sure which service fits?</h2>
+        <p>Book a consultation or send a message — we'll help you figure out the right starting point.</p>
         <div class="hero-actions">
           <a href="book.html" class="btn btn-primary">Book a Service</a>
-          <a href="quote.html" class="btn btn-secondary">Request a Quote</a>
+          <a href="contact.html" class="btn btn-secondary">Contact GK Solutions</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="brand brand--footer">
-          <img src="img/gks_logo_tp.png" alt="" class="brand-mark" width="48" height="48" />
-          <img src="img/gks_txt_tp.png" alt="GK Solutions" class="brand-text" width="140" height="40" />
-        </a>
-        <p class="footer-tagline">Curiosity, Built In.</p>
-      </div>
-      <div class="footer-contact"><a href="mailto:support@gks.software">support@gks.software</a></div>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="book.html">Book</a>
-        <a href="nonprofits.html">Nonprofits</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="policies.html">Policies</a>
-      </nav>
-      <p class="footer-copy">&copy; <span id="year"></span> GK Solutions LLC</p>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <div id="site-mobile-actions"></div>
 
-  <div class="mobile-actions" aria-label="Quick actions">
-    <a href="book.html" class="btn btn-primary">Book a Service</a>
-    <a href="quote.html" class="btn btn-secondary">Request a Quote</a>
-  </div>
-
+  <script src="js/site-shell.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
