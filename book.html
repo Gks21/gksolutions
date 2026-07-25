@@ -37,9 +37,10 @@
               <div class="booking-progress-step"></div>
               <div class="booking-progress-step"></div>
               <div class="booking-progress-step"></div>
+              <div class="booking-progress-step"></div>
             </div>
             <div class="booking-progress-labels" id="booking-progress-labels" aria-hidden="true">
-              <span>Client</span><span>Service</span><span>Pricing</span><span>Details</span><span>Schedule</span><span>Deposit</span><span>Done</span>
+              <span>Client</span><span>Service</span><span>Pricing</span><span>Details</span><span>Schedule</span><span>Terms</span><span>Deposit</span><span>Done</span>
             </div>
           </div>
 
@@ -48,7 +49,7 @@
           <div class="booking-layout" id="booking-layout">
             <div class="booking-main">
           <div class="booking-panel active" data-step="1">
-            <p class="booking-step-label">Step 1 of 7</p>
+            <p class="booking-step-label">Step 1 of 8</p>
             <h2 class="booking-step-title">Choose client type</h2>
             <p class="booking-step-desc">Pricing and availability vary by client type.</p>
             <div class="choice-grid" id="client-type-choices">
@@ -61,7 +62,7 @@
 
           <!-- Step 2: Service -->
           <div class="booking-panel" data-step="2">
-            <p class="booking-step-label">Step 2 of 7</p>
+            <p class="booking-step-label">Step 2 of 8</p>
             <h2 class="booking-step-title">Choose service</h2>
             <p class="booking-step-desc">Select the type of help you need.</p>
             <div class="choice-grid" id="service-choices"></div>
@@ -69,7 +70,7 @@
 
           <!-- Step 3: Pricing -->
           <div class="booking-panel" data-step="3">
-            <p class="booking-step-label">Step 3 of 7</p>
+            <p class="booking-step-label">Step 3 of 8</p>
             <h2 class="booking-step-title">Review pricing</h2>
             <p class="booking-step-desc">Here's what to expect for your selection.</p>
             <div class="pricing-preview" id="pricing-preview"></div>
@@ -77,7 +78,7 @@
 
           <!-- Step 4: Intake -->
           <div class="booking-panel" data-step="4">
-            <p class="booking-step-label">Step 4 of 7</p>
+            <p class="booking-step-label">Step 4 of 8</p>
             <h2 class="booking-step-title">Tell us about your needs</h2>
             <p class="booking-step-desc">This helps us prepare for your appointment.</p>
             <form id="intake-form" class="contact-form form-embedded">
@@ -134,7 +135,7 @@
 
           <!-- Step 5: Date/time -->
           <div class="booking-panel" data-step="5">
-            <p class="booking-step-label">Step 5 of 7</p>
+            <p class="booking-step-label">Step 5 of 8</p>
             <h2 class="booking-step-title">Choose date and time</h2>
             <p class="booking-step-desc" id="schedule-desc">Select an available appointment window.</p>
             <div class="form-group" style="margin-bottom:20px">
@@ -144,15 +145,40 @@
             <div class="time-slots" id="time-slots"></div>
           </div>
 
-          <!-- Step 6: Deposit -->
+          <!-- Step 6: Terms -->
           <div class="booking-panel" data-step="6">
-            <p class="booking-step-label">Step 6 of 7</p>
+            <p class="booking-step-label">Step 6 of 8</p>
+            <h2 class="booking-step-title">Review terms &amp; agreement</h2>
+            <p class="booking-step-desc">Please read and accept the terms below before continuing.</p>
+            <div class="terms-scroll" id="booking-terms-content" tabindex="0" aria-label="Terms and agreement summary">
+              <h3>GK Solutions Terms &amp; Agreement (summary)</h3>
+              <p>By booking a service, you agree to the following:</p>
+              <ul>
+                <li><strong>Booking:</strong> Submitting a request does not guarantee an appointment until GK Solutions confirms date, time, and scope.</li>
+                <li><strong>Deposits:</strong> A $5 deposit is required to reserve a confirmed appointment. Deposits are nonrefundable for missed appointments, cancellations within 24 hours, or failure to provide access or required materials.</li>
+                <li><strong>Payment:</strong> Remaining balances are due after service unless otherwise stated. Hardware, licenses, and third-party services are billed separately unless included in writing.</li>
+                <li><strong>Scope:</strong> Estimates may change if actual scope differs. Additional work requires your approval before proceeding.</li>
+                <li><strong>Your responsibilities:</strong> Maintain backups before service, provide accurate information, and make devices and access available at the scheduled time.</li>
+                <li><strong>Data:</strong> GK Solutions uses reasonable care but cannot guarantee recovery from every data-loss event.</li>
+                <li><strong>Liability:</strong> Services are provided on a best-effort basis. Liability is limited to the amount paid for the specific engagement.</li>
+              </ul>
+              <p>Read the full <a href="terms.html" target="_blank" rel="noopener noreferrer" class="text-link">Terms &amp; Agreement</a> and <a href="policies.html" target="_blank" rel="noopener noreferrer" class="text-link">service policies</a>.</p>
+            </div>
+            <label class="terms-agreement">
+              <input type="checkbox" id="terms-agree" name="terms_agree" required />
+              <span>I have read and agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" class="text-link">Terms &amp; Agreement</a> and <a href="policies.html" target="_blank" rel="noopener noreferrer" class="text-link">service policies</a>.</span>
+            </label>
+          </div>
+
+          <!-- Step 7: Deposit -->
+          <div class="booking-panel" data-step="7">
+            <p class="booking-step-label">Step 7 of 8</p>
             <h2 class="booking-step-title">Confirm deposit agreement</h2>
             <p class="booking-step-desc">A $5 deposit is required to reserve your appointment once confirmed.</p>
             <div class="deposit-notice">
               <p><strong>For consultations:</strong> Refunded after the appointment, or applied toward approved work.</p>
               <p style="margin-top:8px"><strong>For other services:</strong> Applied toward the final balance.</p>
-              <p style="margin-top:8px">The deposit is nonrefundable for missed appointments or late cancellations (within 24 hours). <a href="policies.html" style="color:var(--accent)">View policies →</a></p>
+              <p style="margin-top:8px">The deposit is nonrefundable for missed appointments or late cancellations (within 24 hours). <a href="policies.html" style="color:var(--accent)">View policies →</a> · <a href="terms.html" style="color:var(--accent)">Terms →</a></p>
             </div>
             <div class="pricing-preview">
               <h3>Deposit amount</h3>
@@ -161,9 +187,9 @@
             </div>
           </div>
 
-          <!-- Step 7: Confirmation -->
-          <div class="booking-panel" data-step="7">
-            <p class="booking-step-label">Step 7 of 7</p>
+          <!-- Step 8: Confirmation -->
+          <div class="booking-panel" data-step="8">
+            <p class="booking-step-label">Step 8 of 8</p>
             <h2 class="booking-step-title">Request received</h2>
             <div class="booking-confirmation" id="booking-confirmation"></div>
           </div>

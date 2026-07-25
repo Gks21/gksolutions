@@ -37,6 +37,7 @@
       links: [
         { label: "About", href: "about.html" },
         { label: "Policies", href: "policies.html" },
+        { label: "Terms & Agreement", href: "terms.html" },
       ],
     },
   ];
