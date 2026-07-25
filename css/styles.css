@@ -1869,6 +1869,9 @@ body.nav-open {
 .terms-agreement a:hover {
   text-decoration: underline;
 }
+.contact-form .terms-agreement {
+  margin-bottom: 20px;
+}
 
 /* ── Contact details ─────────────────────────────────────────── */
 .contact-details {

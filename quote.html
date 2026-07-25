@@ -137,6 +137,12 @@
             <input type="file" id="quote-file" name="attachment" accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg,.zip" />
           </div>
 
+          <input type="hidden" name="terms_version" value="July 2026" />
+          <label class="terms-agreement">
+            <input type="checkbox" id="quote-terms-agree" name="terms_agreed" value="Yes" required />
+            <span>I have read and agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" class="text-link">Terms &amp; Agreement</a> and <a href="policies.html" target="_blank" rel="noopener noreferrer" class="text-link">service policies</a>.</span>
+          </label>
+
           <button type="submit" class="btn btn-primary btn-full">Submit quote request</button>
           <p class="sensitive-notice">Please do not include passwords, Social Security numbers, financial records, or other sensitive information.</p>
           <p class="form-note" id="quote-form-note" hidden></p>
