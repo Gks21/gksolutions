@@ -81,6 +81,7 @@
             <h2 class="booking-step-title">Tell us about your needs</h2>
             <p class="booking-step-desc">This helps us prepare for your appointment.</p>
             <form id="intake-form" class="contact-form form-embedded">
+              <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <div class="form-group">
                 <label for="intake-name">Name</label>
                 <input type="text" id="intake-name" name="name" required placeholder="Your name" />
@@ -146,24 +147,24 @@
           <!-- Step 6: Deposit -->
           <div class="booking-panel" data-step="6">
             <p class="booking-step-label">Step 6 of 7</p>
-            <h2 class="booking-step-title">Pay deposit</h2>
-            <p class="booking-step-desc">A $5 deposit is required to reserve your appointment.</p>
+            <h2 class="booking-step-title">Confirm deposit agreement</h2>
+            <p class="booking-step-desc">A $5 deposit is required to reserve your appointment once confirmed.</p>
             <div class="deposit-notice">
               <p><strong>For consultations:</strong> Refunded after the appointment, or applied toward approved work.</p>
               <p style="margin-top:8px"><strong>For other services:</strong> Applied toward the final balance.</p>
               <p style="margin-top:8px">The deposit is nonrefundable for missed appointments or late cancellations (within 24 hours). <a href="policies.html" style="color:var(--accent)">View policies →</a></p>
             </div>
             <div class="pricing-preview">
-              <h3>Deposit due now</h3>
+              <h3>Deposit amount</h3>
               <p class="highlight" style="font-size:1.5rem;color:var(--accent);font-weight:700">$5.00</p>
-              <p style="font-size:0.9rem;color:var(--text-muted);margin-top:8px">Payment processing will be connected here. For now, submitting confirms your booking request and deposit agreement.</p>
+              <p style="font-size:0.9rem;color:var(--text-muted);margin-top:8px">Payment processing will be connected here. Submitting now sends your booking request and records your agreement to the deposit terms.</p>
             </div>
           </div>
 
           <!-- Step 7: Confirmation -->
           <div class="booking-panel" data-step="7">
             <p class="booking-step-label">Step 7 of 7</p>
-            <h2 class="booking-step-title">Booking confirmed</h2>
+            <h2 class="booking-step-title">Request received</h2>
             <div class="booking-confirmation" id="booking-confirmation"></div>
           </div>
 

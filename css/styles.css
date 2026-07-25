@@ -1707,8 +1707,14 @@ body.nav-open {
 }
 .booking-confirmation h3 {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   color: var(--accent);
+}
+.booking-confirm-lead {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
 }
 .confirmation-detail {
   display: grid;
@@ -1986,6 +1992,12 @@ body.nav-open {
   body {
     padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
+  body[data-page="book"] .mobile-actions {
+    display: none;
+  }
+  body[data-page="book"] {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -2034,8 +2046,6 @@ body.nav-open {
   .cta-band p {
     padding-inline: 4px;
   }
-
-  .nav-mobile-cta { display: block; }
 
   .path-grid,
   .steps-grid,

@@ -173,9 +173,12 @@
   function setMinDate() {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
-    const iso = tomorrow.toISOString().split("T")[0];
-    bookingDate.min = iso;
-    if (!bookingDate.value) bookingDate.value = iso;
+    const y = tomorrow.getFullYear();
+    const m = String(tomorrow.getMonth() + 1).padStart(2, "0");
+    const d = String(tomorrow.getDate()).padStart(2, "0");
+    const localDate = `${y}-${m}-${d}`;
+    bookingDate.min = localDate;
+    if (!bookingDate.value) bookingDate.value = localDate;
   }
 
   function showError(message) {
@@ -247,7 +250,7 @@
     }
 
     if (step === 6) {
-      bookingNext.textContent = "Confirm & pay deposit";
+      bookingNext.textContent = "Confirm booking request";
     } else if (step < TOTAL_STEPS) {
       bookingNext.textContent = "Continue";
     }
@@ -296,21 +299,23 @@
     const dateStr = date.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
 
     confirmationEl.innerHTML = `
-      <h3>Your appointment is booked</h3>
+      <h3>Booking request received</h3>
+      <p class="booking-confirm-lead">We'll review your request and follow up to confirm your appointment and collect the deposit.</p>
       <dl class="confirmation-detail">
-        <dt>Date &amp; time</dt>
+        <dt>Requested date &amp; time</dt>
         <dd>${dateStr} at ${state.selectedTime}</dd>
         <dt>Service</dt>
         <dd>${getServiceLabel(state.service)}</dd>
         <dt>Client type</dt>
         <dd>${CLIENT_LABELS[state.clientType]}</dd>
-        <dt>Deposit paid</dt>
-        <dd>$5.00</dd>
-        <dt>Remaining balance</dt>
+        <dt>Deposit required</dt>
+        <dd>$5.00 — due when your appointment is confirmed</dd>
+        <dt>Estimated balance</dt>
         <dd>${p ? p.price : "Per service agreement"} — due after service unless otherwise stated.</dd>
       </dl>
       <div class="deposit-notice">
-        <p><strong>Preparation:</strong> Please have relevant devices accessible and any error messages or account details ready. For on-site visits, ensure someone is available at the scheduled time.</p>
+        <p><strong>What's next:</strong> You'll receive a confirmation email with next steps. Payment processing will be connected soon; for now, submitting this form records your booking request and deposit agreement.</p>
+        <p style="margin-top:8px"><strong>Preparation:</strong> Please have relevant devices accessible and any error messages or account details ready. For on-site visits, ensure someone is available at the scheduled time.</p>
         <p style="margin-top:8px"><strong>Contact:</strong> <a href="mailto:support@gks.software" style="color:var(--accent)">support@gks.software</a></p>
         <p style="margin-top:8px"><strong>Cancellation:</strong> Deposits are nonrefundable for missed appointments or cancellations within 24 hours. <a href="policies.html" style="color:var(--accent)">View policies →</a></p>
       </div>
@@ -321,6 +326,12 @@
     if (state.submitted) return true;
 
     const formData = new FormData(intakeForm);
+    const honeypot = intakeForm.querySelector('[name="_gotcha"]');
+    if (honeypot?.value) {
+      showError("Something went wrong. Please try again.");
+      return false;
+    }
+
     const payload = {
       _subject: `Booking: ${getServiceLabel(state.service)} — ${formData.get("name")}`,
       _template: "table",
@@ -346,9 +357,10 @@
     if (email) payload._replyto = email;
 
     if (window.location.protocol === "file:") {
-      buildConfirmation();
-      state.submitted = true;
-      return true;
+      showError(
+        "Forms need to run from a web server. Open the site at your live URL or use a local server, then try again."
+      );
+      return false;
     }
 
     bookingNext.disabled = true;
@@ -372,7 +384,7 @@
       return false;
     } finally {
       bookingNext.disabled = false;
-      bookingNext.textContent = "Confirm & pay deposit";
+      bookingNext.textContent = "Confirm booking request";
     }
   }
 
