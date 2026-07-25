@@ -15,7 +15,7 @@
 <body data-page="book">
   <div id="site-header"></div>
 
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
@@ -28,17 +28,25 @@
     <section class="page-content">
       <div class="container">
         <div class="booking-wizard" id="booking-wizard">
-          <div class="booking-progress" id="booking-progress" aria-hidden="true">
-            <div class="booking-progress-step"></div>
-            <div class="booking-progress-step"></div>
-            <div class="booking-progress-step"></div>
-            <div class="booking-progress-step"></div>
-            <div class="booking-progress-step"></div>
-            <div class="booking-progress-step"></div>
-            <div class="booking-progress-step"></div>
+          <div class="booking-progress-wrap">
+            <div class="booking-progress" id="booking-progress" aria-hidden="true">
+              <div class="booking-progress-step"></div>
+              <div class="booking-progress-step"></div>
+              <div class="booking-progress-step"></div>
+              <div class="booking-progress-step"></div>
+              <div class="booking-progress-step"></div>
+              <div class="booking-progress-step"></div>
+              <div class="booking-progress-step"></div>
+            </div>
+            <div class="booking-progress-labels" id="booking-progress-labels" aria-hidden="true">
+              <span>Client</span><span>Service</span><span>Pricing</span><span>Details</span><span>Schedule</span><span>Deposit</span><span>Done</span>
+            </div>
           </div>
 
-          <!-- Step 1: Client type -->
+          <div class="booking-feedback" id="booking-feedback" role="alert" aria-live="polite"></div>
+
+          <div class="booking-layout" id="booking-layout">
+            <div class="booking-main">
           <div class="booking-panel active" data-step="1">
             <p class="booking-step-label">Step 1 of 7</p>
             <h2 class="booking-step-title">Choose client type</h2>
@@ -162,6 +170,13 @@
           <div class="booking-nav" id="booking-nav">
             <button type="button" class="btn btn-secondary" id="booking-back" hidden>Back</button>
             <button type="button" class="btn btn-primary" id="booking-next">Continue</button>
+          </div>
+            </div>
+
+            <aside class="booking-summary" id="booking-summary" aria-label="Booking summary">
+              <h3>Your booking</h3>
+              <dl id="booking-summary-content"></dl>
+            </aside>
           </div>
         </div>
       </div>

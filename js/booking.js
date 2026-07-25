@@ -83,6 +83,11 @@
   };
 
   const progressEl = document.getElementById("booking-progress");
+  const progressLabels = document.getElementById("booking-progress-labels");
+  const bookingFeedback = document.getElementById("booking-feedback");
+  const bookingLayout = document.getElementById("booking-layout");
+  const bookingSummary = document.getElementById("booking-summary");
+  const bookingSummaryContent = document.getElementById("booking-summary-content");
   const clientChoices = document.getElementById("client-type-choices");
   const serviceChoices = document.getElementById("service-choices");
   const pricingPreview = document.getElementById("pricing-preview");
@@ -114,6 +119,7 @@
         state.service = btn.dataset.value;
         serviceChoices.querySelectorAll(".choice-btn").forEach((b) => b.classList.remove("selected"));
         btn.classList.add("selected");
+        updateSummary();
       });
     });
   }
@@ -159,6 +165,7 @@
         state.selectedTime = btn.dataset.time;
         timeSlots.querySelectorAll(".time-slot").forEach((b) => b.classList.remove("selected"));
         btn.classList.add("selected");
+        updateSummary();
       });
     });
   }
@@ -171,15 +178,60 @@
     if (!bookingDate.value) bookingDate.value = iso;
   }
 
+  function showError(message) {
+    if (!bookingFeedback) return;
+    bookingFeedback.textContent = message;
+    bookingFeedback.className = "booking-feedback visible error";
+    bookingFeedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function clearError() {
+    if (!bookingFeedback) return;
+    bookingFeedback.textContent = "";
+    bookingFeedback.className = "booking-feedback";
+  }
+
+  function updateSummary() {
+    if (!bookingSummary || !bookingSummaryContent || !bookingLayout) return;
+
+    const parts = [];
+    if (state.clientType) {
+      parts.push(`<div><dt>Client type</dt><dd>${CLIENT_LABELS[state.clientType]}</dd></div>`);
+    }
+    if (state.service) {
+      parts.push(`<div><dt>Service</dt><dd>${getServiceLabel(state.service)}</dd></div>`);
+    }
+    const p = getPricing();
+    if (p) {
+      parts.push(`<div><dt>Starting price</dt><dd>${p.price}</dd></div>`);
+    }
+    if (bookingDate?.value && state.selectedTime) {
+      const date = new Date(bookingDate.value + "T12:00:00");
+      const dateStr = date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+      parts.push(`<div><dt>Appointment</dt><dd>${dateStr} at ${state.selectedTime}</dd></div>`);
+    }
+
+    const hasSummary = parts.length > 0;
+    bookingSummaryContent.innerHTML = parts.join("");
+    bookingSummary.classList.toggle("visible", hasSummary && state.step < TOTAL_STEPS);
+    bookingLayout.classList.toggle("has-summary", hasSummary && state.step >= 2 && state.step < TOTAL_STEPS);
+  }
+
   function updateProgress() {
     progressEl.querySelectorAll(".booking-progress-step").forEach((el, i) => {
       el.classList.toggle("active", i < state.step);
       el.classList.toggle("complete", i < state.step - 1);
     });
+    if (progressLabels) {
+      progressLabels.querySelectorAll("span").forEach((el, i) => {
+        el.classList.toggle("active", i + 1 === state.step);
+      });
+    }
   }
 
   function showStep(step) {
     state.step = step;
+    clearError();
     wizard.querySelectorAll(".booking-panel").forEach((panel) => {
       panel.classList.toggle("active", Number(panel.dataset.step) === step);
     });
@@ -201,20 +253,23 @@
     }
 
     updateProgress();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    updateSummary();
+    const scrollTarget = document.getElementById("booking-wizard");
+    if (scrollTarget) scrollTarget.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function validateStep() {
+    clearError();
     switch (state.step) {
       case 1:
         if (!state.clientType) {
-          alert("Please select a client type.");
+          showError("Please select a client type to continue.");
           return false;
         }
         return true;
       case 2:
         if (!state.service) {
-          alert("Please select a service.");
+          showError("Please select a service to continue.");
           return false;
         }
         return true;
@@ -226,7 +281,7 @@
         return true;
       case 5:
         if (!bookingDate.value || !state.selectedTime) {
-          alert("Please select a date and time.");
+          showError("Please select a date and time for your appointment.");
           return false;
         }
         return true;
@@ -313,7 +368,7 @@
       state.submitted = true;
       return true;
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Something went wrong. Please email support@gks.software.");
+      showError(err instanceof Error ? err.message : "Something went wrong. Please email support@gks.software.");
       return false;
     } finally {
       bookingNext.disabled = false;
@@ -326,6 +381,7 @@
       state.clientType = btn.dataset.value;
       clientChoices.querySelectorAll(".choice-btn").forEach((b) => b.classList.remove("selected"));
       btn.classList.add("selected");
+      updateSummary();
     });
   });
 
@@ -348,6 +404,7 @@
   bookingDate.addEventListener("change", () => {
     state.selectedTime = null;
     renderTimeSlots();
+    updateSummary();
   });
 
   showStep(1);

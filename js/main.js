@@ -7,6 +7,15 @@
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  function setMenuOpen(open) {
+    if (!navToggle || !navLinks) return;
+    navLinks.classList.toggle("open", open);
+    navToggle.classList.toggle("active", open);
+    navToggle.setAttribute("aria-expanded", open);
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.classList.toggle("nav-open", open);
+  }
+
   if (header) {
     window.addEventListener("scroll", () => {
       header.classList.toggle("scrolled", window.scrollY > 20);
@@ -15,24 +24,24 @@
 
   if (navToggle && navLinks) {
     navToggle.addEventListener("click", () => {
-      const open = navLinks.classList.toggle("open");
-      navToggle.classList.toggle("active", open);
-      navToggle.setAttribute("aria-expanded", open);
-      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      setMenuOpen(!navLinks.classList.contains("open"));
     });
 
     navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        navToggle.classList.remove("active");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Open menu");
-      });
+      link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1100) setMenuOpen(false);
     });
   }
 
   const revealEls = document.querySelectorAll(
-    ".service-card, .expect-card, .feature-card, .audience-card, .plan-card, .service-block, .trust-item, .about-inner, .hero-brand-wrap, .hero-headline, .hero-subtitle, .hero-actions, .volunteer-content, .volunteer-form, .contact-info, .contact-form, .section-header, .tag-list, .process-steps, .page-hero .container, .booking-wizard"
+    ".service-card, .expect-card, .feature-card, .path-card, .help-card, .audience-card, .step-card, .plan-card, .service-block, .trust-item, .about-inner, .hero-brand-wrap, .hero-headline, .hero-subtitle, .hero-actions, .volunteer-content, .volunteer-form, .contact-info, .contact-form, .section-header, .tag-list, .process-steps, .page-hero .container, .booking-wizard"
   );
   revealEls.forEach((el) => el.classList.add("reveal"));
 

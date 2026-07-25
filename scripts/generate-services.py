@@ -154,7 +154,7 @@ TEMPLATE = """<!DOCTYPE html>
 <body data-page="services" data-base="..">
   <div id="site-header"></div>
 
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
@@ -171,6 +171,7 @@ TEMPLATE = """<!DOCTYPE html>
 {includes_html}
         </ul>
         <p class="pricing-note">{note}</p>
+        <p class="service-next-hint">See <a href="../pricing.html" class="text-link">pricing by client type</a> or <a href="../support-plans.html" class="text-link">support plans</a> for ongoing coverage options.</p>
       </div>
     </section>
 
