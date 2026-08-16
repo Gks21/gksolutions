@@ -56,25 +56,36 @@
     headerEl.outerHTML = `
   ${skipLink}
   <header class="header" id="header">
-    <nav class="header-inner" aria-label="Main">
-      <a href="${link("index.html")}" class="logo">
-        <img src="${link("img/gks_logo_tp.png")}" alt="" class="logo-mark" width="48" height="48" />
-        <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="logo-text" width="140" height="40" />
-      </a>
-      <div class="header-end">
-        <ul class="nav-links" id="nav-links">
-          ${navItems.map(navLink).join("")}
-          <li class="nav-mobile-cta">
-            <a href="${link("book.html")}" class="btn btn-primary btn-full">Book a Service</a>
-          </li>
-          <li class="nav-mobile-cta">
-            <a href="${link("quote.html")}" class="btn btn-secondary btn-full">Request a Quote</a>
-          </li>
-        </ul>
-        <a href="${link("book.html")}" class="btn btn-primary btn-sm header-cta">Book a Service</a>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-        </button>
+    <div class="header-rail">
+      <div class="header-inner">
+        <p>Southern Indiana &amp; Louisville · Remote nationwide</p>
+        <a href="mailto:support@gks.software">support@gks.software</a>
+      </div>
+    </div>
+    <nav class="header-bar" aria-label="Main">
+      <div class="header-inner">
+        <a href="${link("index.html")}" class="logo">
+          <img src="${link("img/gks_logo_tp.png")}" alt="" class="logo-mark" width="48" height="48" />
+          <span class="logo-lockup">
+            <span class="logo-code" aria-hidden="true">{ <em>GKS</em> }</span>
+            <span class="logo-name">GK Solutions</span>
+          </span>
+        </a>
+        <div class="header-end">
+          <ul class="nav-links" id="nav-links">
+            ${navItems.map(navLink).join("")}
+            <li class="nav-mobile-cta">
+              <a href="${link("book.html")}" class="btn btn-primary btn-full">Book a Service</a>
+            </li>
+            <li class="nav-mobile-cta">
+              <a href="${link("quote.html")}" class="btn btn-secondary btn-full">Request a Quote</a>
+            </li>
+          </ul>
+          <a href="${link("book.html")}" class="btn btn-primary btn-sm header-cta">Book a Service</a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+            <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
     </nav>
   </header>`;

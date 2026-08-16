@@ -22,6 +22,15 @@
     });
   }
 
+  const heroFrame = document.getElementById("hero-frame");
+  if (heroFrame && window.matchMedia("(pointer: fine)").matches) {
+    heroFrame.addEventListener("pointermove", (event) => {
+      const box = heroFrame.getBoundingClientRect();
+      heroFrame.style.setProperty("--mx", `${event.clientX - box.left}px`);
+      heroFrame.style.setProperty("--my", `${event.clientY - box.top}px`);
+    });
+  }
+
   if (navToggle && navLinks) {
     navToggle.addEventListener("click", () => {
       setMenuOpen(!navLinks.classList.contains("open"));
