@@ -4,10 +4,8 @@
   const p = base ? base + "/" : "";
 
   const navItems = [
-    { id: "home", label: "Home", href: "index.html" },
     { id: "services", label: "Services", href: "services.html" },
     { id: "pricing", label: "Pricing", href: "pricing.html" },
-    { id: "book", label: "Book", href: "book.html" },
     { id: "nonprofits", label: "Nonprofits", href: "nonprofits.html" },
     { id: "about", label: "About", href: "about.html" },
     { id: "contact", label: "Contact", href: "contact.html" },
@@ -58,26 +56,25 @@
     headerEl.outerHTML = `
   ${skipLink}
   <header class="header" id="header">
-    <nav class="nav container" aria-label="Main">
+    <nav class="header-inner" aria-label="Main">
       <a href="${link("index.html")}" class="logo">
         <img src="${link("img/gks_logo_tp.png")}" alt="" class="logo-mark" width="48" height="48" />
         <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="logo-text" width="140" height="40" />
       </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        ${navItems.map(navLink).join("")}
-        <li class="nav-mobile-cta">
-          <a href="${link("book.html")}" class="btn btn-primary btn-sm btn-full">Book a Service</a>
-        </li>
-        <li class="nav-mobile-cta">
-          <a href="${link("quote.html")}" class="btn btn-secondary btn-sm btn-full">Request a Quote</a>
-        </li>
-      </ul>
-      <div class="nav-actions">
-        <a href="${link("book.html")}" class="btn btn-primary btn-sm">Book a Service</a>
-        <a href="${link("quote.html")}" class="btn btn-secondary btn-sm">Request a Quote</a>
+      <div class="header-end">
+        <ul class="nav-links" id="nav-links">
+          ${navItems.map(navLink).join("")}
+          <li class="nav-mobile-cta">
+            <a href="${link("book.html")}" class="btn btn-primary btn-full">Book a Service</a>
+          </li>
+          <li class="nav-mobile-cta">
+            <a href="${link("quote.html")}" class="btn btn-secondary btn-full">Request a Quote</a>
+          </li>
+        </ul>
+        <a href="${link("book.html")}" class="btn btn-primary btn-sm header-cta">Book a Service</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
       </div>
     </nav>
   </header>`;

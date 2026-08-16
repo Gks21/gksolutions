@@ -36,12 +36,12 @@
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 1100) setMenuOpen(false);
+      if (window.innerWidth > 900) setMenuOpen(false);
     });
   }
 
   const revealEls = document.querySelectorAll(
-    ".service-card, .expect-card, .feature-card, .path-card, .help-card, .audience-card, .step-card, .plan-card, .service-block, .trust-item, .about-inner, .hero-brand-wrap, .hero-headline, .hero-subtitle, .hero-actions, .volunteer-content, .volunteer-form, .contact-info, .contact-form, .section-header, .tag-list, .process-steps, .page-hero .container, .booking-wizard, .service-catalog, .audience-list, .steps-row, .split-block"
+    ".service-card, .expect-card, .feature-card, .path-card, .help-card, .audience-card, .step-card, .plan-card, .service-block, .trust-item, .about-inner, .hero-copy, .hero-visual, .hero-actions, .volunteer-content, .volunteer-form, .contact-info, .contact-form, .section-header, .tag-list, .process-steps, .page-hero .container, .booking-wizard, .service-catalog, .audience-list, .steps-row, .split-block"
   );
   revealEls.forEach((el) => el.classList.add("reveal"));
 
