@@ -2963,7 +2963,7 @@ a.audience-scale-card:hover {
 
   .form-row { grid-template-columns: 1fr; }
 
-  .logo-text { height: 18px; }
+  .logo-text { height: 22px; }
   .header-inner {
     width: calc(100% - 32px);
   }
