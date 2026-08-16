@@ -69,10 +69,7 @@
       <div class="header-inner">
         <a href="${link("index.html")}" class="logo">
           <img src="${link("img/gks_logo_tp.png")}" alt="" class="logo-mark" width="48" height="48" />
-          <span class="logo-lockup">
-            <span class="logo-code" aria-hidden="true">{ <em>GKS</em> }</span>
-            <span class="logo-name">GK Solutions</span>
-          </span>
+          <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="logo-text" width="140" height="40" />
         </a>
         <div class="header-end">
           <ul class="nav-links" id="nav-links">
