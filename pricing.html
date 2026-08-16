@@ -9,7 +9,7 @@
   <link rel="icon" href="img/gks_favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body data-page="pricing">
@@ -20,74 +20,100 @@
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="container">
         <p class="section-eyebrow">Pricing</p>
-        <h1 class="page-title">Clear rates, no surprises</h1>
-        <p class="page-lead">Pricing varies by client type. Common services use flat rates whenever possible; larger projects receive a written quote first.</p>
+        <h1 class="page-title">Straightforward where it can be. Custom where it needs to be.</h1>
+        <p class="page-lead">Some projects need a quote. Some just need an appointment. We'll tell you what makes sense before work begins.</p>
       </div>
     </section>
 
     <section class="page-content">
       <div class="container container--wide">
-        <div class="pricing-section">
-          <h2>Individuals</h2>
-          <div class="table-scroll">
-            <table class="pricing-table">
-              <thead><tr><th>Service</th><th>Rate</th></tr></thead>
-              <tbody>
-                <tr><td>Consultation</td><td class="price">$10</td></tr>
-                <tr><td>Remote support</td><td class="price">$45 / hour</td></tr>
-                <tr><td>On-site support</td><td class="price">$60 / hour</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="pricing-note">Common setup services should use flat rates whenever possible. Larger or uncertain jobs receive an estimate first. Websites and custom software are quoted by project.</p>
+        <div class="pricing-switcher" id="pricing-switcher" role="tablist" aria-label="Client type">
+          <button type="button" role="tab" id="tab-individual" aria-controls="panel-individual" aria-selected="true" data-panel="individual">Individual</button>
+          <button type="button" role="tab" id="tab-small-business" aria-controls="panel-small-business" aria-selected="false" data-panel="small-business">Small Business</button>
+          <button type="button" role="tab" id="tab-nonprofit" aria-controls="panel-nonprofit" aria-selected="false" data-panel="nonprofit">Nonprofit</button>
+          <button type="button" role="tab" id="tab-enterprise" aria-controls="panel-enterprise" aria-selected="false" data-panel="enterprise">Enterprise</button>
         </div>
 
-        <div class="pricing-section">
-          <h2>Small Businesses</h2>
-          <div class="table-scroll">
-            <table class="pricing-table">
-              <thead><tr><th>Service</th><th>Rate</th></tr></thead>
-              <tbody>
-                <tr><td>Consultation</td><td class="price">$20 <span class="price-note">(applied toward approved work)</span></td></tr>
-                <tr><td>Remote support</td><td class="price">$65 / hour</td></tr>
-                <tr><td>On-site support</td><td class="price">$80 / hour</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="pricing-note">Common services may use fixed pricing. Larger setups, websites, software, networks, and migrations receive a written quote. <a href="support-plans.html" class="text-link">View support plans</a></p>
+        <div class="pricing-panel" id="panel-individual" role="tabpanel" aria-labelledby="tab-individual" data-panel="individual">
+          <h2>Help without the contract.</h2>
+          <p class="pricing-emphasis">Pay only when you need us.</p>
+          <dl class="rate-list">
+            <div class="rate-item">
+              <dt>Consultation</dt>
+              <dd>$10</dd>
+            </div>
+            <div class="rate-item">
+              <dt>Remote Support</dt>
+              <dd>$45<span>/hr</span></dd>
+            </div>
+            <div class="rate-item">
+              <dt>On-Site Support</dt>
+              <dd>$60<span>/hr</span></dd>
+            </div>
+          </dl>
+          <p class="pricing-note">Common setup services use flat rates whenever possible. Larger or uncertain jobs receive an estimate first. Websites and custom software are quoted by project.</p>
         </div>
 
-        <div class="pricing-section">
-          <h2>Nonprofits</h2>
-          <div class="table-scroll">
-            <table class="pricing-table">
-              <thead><tr><th>Service</th><th>Rate</th></tr></thead>
-              <tbody>
-                <tr><td>Advising and consultations</td><td class="price">Free</td></tr>
-                <tr><td>Remote support</td><td class="price">$25 / hour</td></tr>
-                <tr><td>On-site support</td><td class="price">$35 / hour</td></tr>
-                <tr><td>Workstation setup</td><td class="price">$50 each</td></tr>
-                <tr><td>Basic network services</td><td class="price">Starting at $75</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="pricing-note">Websites and custom software may be provided at no cost after review and approval. <a href="nonprofits.html" class="text-link">Learn about the nonprofit program</a> · <a href="support-plans.html" class="text-link">View nonprofit support plans</a></p>
+        <div class="pricing-panel" id="panel-small-business" role="tabpanel" aria-labelledby="tab-small-business" data-panel="small-business" hidden>
+          <h2>Flexible support without building an IT department.</h2>
+          <dl class="rate-list">
+            <div class="rate-item">
+              <dt>Consultation</dt>
+              <dd>$20</dd>
+            </div>
+            <div class="rate-item">
+              <dt>Remote Support</dt>
+              <dd>$65<span>/hr</span></dd>
+            </div>
+            <div class="rate-item">
+              <dt>On-Site Support</dt>
+              <dd>$80<span>/hr</span></dd>
+            </div>
+          </dl>
+          <p class="pricing-note">Consultations are applied toward approved work. Common services may use fixed pricing. Larger setups, websites, software, networks, and migrations receive a written quote. <a href="support-plans.html" class="text-link">Compare support plans</a></p>
         </div>
 
-        <div class="pricing-section">
-          <h2>Enterprise &amp; Large Organizations</h2>
-          <p class="pricing-note">All services are custom quoted. Possible services include contract support, deployments, infrastructure projects, integrations, custom software, documentation, training, support agreements, and development services.</p>
-          <a href="quote.html" class="btn btn-primary">Request a Quote</a>
+        <div class="pricing-panel pricing-panel--nonprofit" id="panel-nonprofit" role="tabpanel" aria-labelledby="tab-nonprofit" data-panel="nonprofit" hidden>
+          <h2>Technology support should not compete with your mission.</h2>
+          <dl class="rate-list">
+            <div class="rate-item">
+              <dt>Advising</dt>
+              <dd>Free</dd>
+            </div>
+            <div class="rate-item">
+              <dt>Consultations</dt>
+              <dd>Free</dd>
+            </div>
+            <div class="rate-item">
+              <dt>Remote Support</dt>
+              <dd>$25<span>/hr</span></dd>
+            </div>
+            <div class="rate-item">
+              <dt>On-Site Support</dt>
+              <dd>$35<span>/hr</span></dd>
+            </div>
+          </dl>
+          <div class="approved-zero">
+            <h3>Websites &amp; Software</h3>
+            <p>$0 for approved projects</p>
+          </div>
+          <p class="pricing-note">Website and software projects are reviewed individually based on scope, available capacity, community impact, and long-term requirements. <a href="nonprofits.html" class="text-link">Learn about the nonprofit program</a></p>
+        </div>
+
+        <div class="pricing-panel" id="panel-enterprise" role="tabpanel" aria-labelledby="tab-enterprise" data-panel="enterprise" hidden>
+          <h2>Built around the project.</h2>
+          <p class="section-desc">Enterprise and larger organizational work is quoted based on scope, environment, support requirements, timeline, and complexity.</p>
+          <a href="quote.html" class="btn btn-primary">Request Enterprise Quote</a>
         </div>
       </div>
     </section>
 
-    <section class="cta-band">
+    <section class="cta-book">
       <div class="container">
         <h2>Need ongoing support?</h2>
-        <p>Compare prepaid support bundles for small businesses and nonprofits.</p>
+        <p class="cta-book-note">Compare prepaid support options for small businesses and nonprofits.</p>
         <div class="hero-actions">
-          <a href="support-plans.html" class="btn btn-primary">View Support Plans</a>
+          <a href="support-plans.html" class="btn btn-primary">Compare Support Options</a>
           <a href="book.html" class="btn btn-secondary">Book a Service</a>
         </div>
       </div>

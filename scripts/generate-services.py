@@ -6,9 +6,9 @@ import os
 SERVICES = [
     {
         "slug": "consulting",
-        "title": "IT Consulting & Advising",
-        "meta": "GK Solutions IT consulting — technology recommendations, project planning, security, and upgrade guidance.",
-        "summary": "Help evaluating technology needs, purchases, systems, workflows, security, and future plans.",
+        "title": "Consulting & Advising",
+        "meta": "GK Solutions consulting — technology planning, purchases, systems, software selection, and technical direction.",
+        "summary": "Not every problem needs someone holding a screwdriver. Help evaluating technology needs, purchases, systems, workflows, security, and future plans.",
         "includes": [
             "Technology recommendations",
             "Project planning",
@@ -24,9 +24,9 @@ SERVICES = [
     },
     {
         "slug": "it-support",
-        "title": "Technical Support",
-        "meta": "GK Solutions technical support — computer troubleshooting, software issues, printers, email, and more.",
-        "summary": "Help diagnosing and resolving everyday technology problems.",
+        "title": "IT Support",
+        "meta": "GK Solutions IT support — computer troubleshooting, software issues, printers, email, and more.",
+        "summary": "When something isn't working, we'll help figure out why. Remote and on-site help for everyday technology problems.",
         "includes": [
             "Computer troubleshooting",
             "Software issues",
@@ -43,9 +43,9 @@ SERVICES = [
     },
     {
         "slug": "setup",
-        "title": "Setup Services",
-        "meta": "GK Solutions setup services — computer, device, printer, and software installation and configuration.",
-        "summary": "Installation and configuration of new or existing technology.",
+        "title": "Setups",
+        "meta": "GK Solutions setups — computer, device, printer, and software installation and configuration.",
+        "summary": "New computer? Office equipment? Software? Accounts? Network gear? We can get everything configured and working together.",
         "includes": [
             "Computer setup",
             "Device setup",
@@ -82,7 +82,7 @@ SERVICES = [
         "slug": "websites",
         "title": "Website Services",
         "meta": "GK Solutions website services — development, redesigns, maintenance, accessibility, and hosting guidance.",
-        "summary": "Planning, building, improving, or maintaining websites.",
+        "summary": "Modern websites designed around what the person or organization actually needs, without unnecessary complexity.",
         "includes": [
             "New website development",
             "Website redesigns",
@@ -101,7 +101,7 @@ SERVICES = [
         "slug": "custom-software",
         "title": "Custom Software",
         "meta": "GK Solutions custom software — internal apps, portals, workflow automation, dashboards, and integrations.",
-        "summary": "Custom tools built around an organization's actual workflow.",
+        "summary": "Sometimes the software you need simply doesn't exist. We design and build custom tools around real workflows, from small utilities to larger internal systems.",
         "includes": [
             "Internal applications",
             "Employee portals",
@@ -148,7 +148,7 @@ TEMPLATE = """<!DOCTYPE html>
   <link rel="icon" href="../img/gks_favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body data-page="services" data-base="..">
@@ -177,7 +177,7 @@ TEMPLATE = """<!DOCTYPE html>
 
     <section class="cta-band">
       <div class="container">
-        <h2>Ready to get started?</h2>
+        <h2>Have something you need help with?</h2>
         <div class="hero-actions">
           <a href="{cta_primary_href}" class="btn btn-primary">{cta_primary_label}</a>
           <a href="{cta_secondary_href}" class="btn btn-secondary">{cta_secondary_label}</a>

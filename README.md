@@ -6,11 +6,11 @@ Multi-page service platform for GK Solutions — IT support, consulting, website
 
 | Page | File | Description |
 |------|------|-------------|
-| Home | `index.html` | Hero, featured services, audience types, trust section |
-| Services (browse) | `services.html` | Service catalog index with cards |
+| Home | `index.html` | Hero, services, audiences, pricing/support teasers, media, nonprofit, roadmap |
+| Services (browse) | `services.html` | Service catalog with large panels |
 | Service details | `services/*.html` | Individual pages per service |
-| Pricing | `pricing.html` | Hourly rates by client type |
-| Support Plans | `support-plans.html` | Prepaid support bundles |
+| Pricing | `pricing.html` | Client-type selector with rates |
+| Support Plans | `support-plans.html` | Pay-as-needed, monthly, and annual support |
 | Book | `book.html` | 7-step booking wizard |
 | Quote | `quote.html` | Project quote request form |
 | Media Conversion | `media-conversion.html` | VHS/DVD pricing, process, privacy |

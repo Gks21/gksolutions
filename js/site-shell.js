@@ -4,38 +4,41 @@
   const p = base ? base + "/" : "";
 
   const navItems = [
+    { id: "home", label: "Home", href: "index.html" },
     { id: "services", label: "Services", href: "services.html" },
     { id: "pricing", label: "Pricing", href: "pricing.html" },
+    { id: "support", label: "Support", href: "support-plans.html" },
     { id: "nonprofits", label: "Nonprofits", href: "nonprofits.html" },
     { id: "about", label: "About", href: "about.html" },
-    { id: "contact", label: "Contact", href: "contact.html" },
   ];
 
   const footerGroups = [
     {
       title: "Services",
       links: [
-        { label: "Browse services", href: "services.html" },
-        { label: "Pricing", href: "pricing.html" },
-        { label: "Support plans", href: "support-plans.html" },
-        { label: "Media conversion", href: "media-conversion.html" },
-      ],
-    },
-    {
-      title: "Get started",
-      links: [
-        { label: "Book a service", href: "book.html" },
-        { label: "Request a quote", href: "quote.html" },
-        { label: "Nonprofit program", href: "nonprofits.html" },
-        { label: "Contact", href: "contact.html" },
+        { label: "IT Support", href: "services/it-support.html" },
+        { label: "Consulting", href: "services/consulting.html" },
+        { label: "Setups", href: "services/setup.html" },
+        { label: "Websites", href: "services/websites.html" },
+        { label: "Software", href: "services/custom-software.html" },
+        { label: "Media Conversion", href: "media-conversion.html" },
       ],
     },
     {
       title: "Company",
       links: [
         { label: "About", href: "about.html" },
+        { label: "Nonprofits", href: "nonprofits.html" },
+        { label: "Pricing", href: "pricing.html" },
         { label: "Policies", href: "policies.html" },
-        { label: "Terms & Agreement", href: "terms.html" },
+      ],
+    },
+    {
+      title: "Get Started",
+      links: [
+        { label: "Book Service", href: "book.html" },
+        { label: "Request Quote", href: "quote.html" },
+        { label: "Contact", href: "contact.html" },
       ],
     },
   ];
@@ -66,22 +69,20 @@
       <div class="header-inner">
         <a href="${link("index.html")}" class="logo">
           <img src="${link("img/gks_logo_tp.png")}" alt="" class="logo-mark" width="48" height="48" />
-          <span class="logo-lockup">
-            <span class="logo-code" aria-hidden="true">{ <em>GKS</em> }</span>
-            <span class="logo-name">GK Solutions</span>
-          </span>
+          <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="logo-text" width="140" height="40" />
         </a>
         <div class="header-end">
           <ul class="nav-links" id="nav-links">
             ${navItems.map(navLink).join("")}
             <li class="nav-mobile-cta">
-              <a href="${link("book.html")}" class="btn btn-primary btn-full">Book a Service</a>
+              <a href="${link("book.html")}" class="btn btn-primary btn-full">Book Service</a>
             </li>
             <li class="nav-mobile-cta">
-              <a href="${link("quote.html")}" class="btn btn-secondary btn-full">Request a Quote</a>
+              <a href="${link("quote.html")}" class="btn btn-ghost btn-full">Request a Quote</a>
             </li>
           </ul>
-          <a href="${link("book.html")}" class="btn btn-primary btn-sm header-cta">Book a Service</a>
+          <a href="${link("quote.html")}" class="btn btn-ghost btn-sm header-cta header-quote">Request a Quote</a>
+          <a href="${link("book.html")}" class="btn btn-primary btn-sm header-cta">Book Service</a>
           <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
             <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
           </button>
@@ -101,7 +102,7 @@
           <img src="${link("img/gks_logo_tp.png")}" alt="" class="brand-mark" width="48" height="48" />
           <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="brand-text" width="140" height="40" />
         </a>
-        <p class="footer-tagline">Curiosity, Built In.</p>
+        <p class="footer-domain">gks.software</p>
         <a href="mailto:support@gks.software" class="footer-email">support@gks.software</a>
       </div>
       <div class="footer-columns">
@@ -117,7 +118,10 @@
           )
           .join("")}
       </div>
-      <p class="footer-copy">&copy; <span id="year"></span> GK Solutions LLC</p>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="year"></span> GK Solutions LLC</p>
+        <p class="footer-slogan">Curiosity, Built In.</p>
+      </div>
     </div>
   </footer>`;
   }
