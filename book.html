@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Book a service with GK Solutions — schedule IT support, consultations, setup, and media conversion pickup." />
-  <meta name="theme-color" content="#232323" />
+  <meta name="theme-color" content="#1c1b1a" />
   <title>Book a Service — GK Solutions</title>
   <link rel="icon" href="img/gks_favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,7 +48,7 @@
 
           <div class="booking-layout" id="booking-layout">
             <div class="booking-main">
-          <div class="booking-panel active" data-step="1">
+              <div class="booking-panel active" data-step="1">
             <p class="booking-step-label">Step 1 of 8</p>
             <h2 class="booking-step-title">Choose client type</h2>
             <p class="booking-step-desc">Pricing and availability vary by client type.</p>
@@ -138,7 +138,7 @@
             <p class="booking-step-label">Step 5 of 8</p>
             <h2 class="booking-step-title">Choose date and time</h2>
             <p class="booking-step-desc" id="schedule-desc">Select an available appointment window.</p>
-            <div class="form-group" style="margin-bottom:20px">
+            <div class="form-group u-mb-20">
               <label for="booking-date">Date</label>
               <input type="date" id="booking-date" name="date" required />
             </div>
@@ -177,13 +177,13 @@
             <p class="booking-step-desc">A $5 deposit is required to reserve your appointment once confirmed.</p>
             <div class="deposit-notice">
               <p><strong>For consultations:</strong> Refunded after the appointment, or applied toward approved work.</p>
-              <p style="margin-top:8px"><strong>For other services:</strong> Applied toward the final balance.</p>
-              <p style="margin-top:8px">The deposit is nonrefundable for missed appointments or late cancellations (within 24 hours). <a href="policies.html" style="color:var(--accent)">View policies →</a> · <a href="terms.html" style="color:var(--accent)">Terms →</a></p>
+              <p class="stack-gap"><strong>For other services:</strong> Applied toward the final balance.</p>
+              <p class="stack-gap">The deposit is nonrefundable for missed appointments or late cancellations (within 24 hours). <a href="policies.html" class="text-link">View policies</a> · <a href="terms.html" class="text-link">Terms</a></p>
             </div>
             <div class="pricing-preview">
               <h3>Deposit amount</h3>
-              <p class="highlight" style="font-size:1.5rem;color:var(--accent);font-weight:700">$5.00</p>
-              <p style="font-size:0.9rem;color:var(--text-muted);margin-top:8px">Payment processing will be connected here. Submitting now sends your booking request and records your agreement to the deposit terms.</p>
+              <p class="deposit-amount">$5.00</p>
+              <p class="muted-note">Payment processing will be connected here. Submitting now sends your booking request and records your agreement to the deposit terms.</p>
             </div>
           </div>
 
@@ -194,10 +194,10 @@
             <div class="booking-confirmation" id="booking-confirmation"></div>
           </div>
 
-          <div class="booking-nav" id="booking-nav">
-            <button type="button" class="btn btn-secondary" id="booking-back" hidden>Back</button>
-            <button type="button" class="btn btn-primary" id="booking-next">Continue</button>
-          </div>
+              <div class="booking-nav" id="booking-nav">
+                <button type="button" class="btn btn-secondary" id="booking-back" hidden>Back</button>
+                <button type="button" class="btn btn-primary" id="booking-next">Continue</button>
+              </div>
             </div>
 
             <aside class="booking-summary" id="booking-summary" aria-label="Booking summary">

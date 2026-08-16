@@ -60,7 +60,8 @@
   <header class="header" id="header">
     <nav class="nav container" aria-label="Main">
       <a href="${link("index.html")}" class="logo">
-        <img src="${link("img/gks_logo_tp.png")}" alt="GK Solutions" class="logo-mark" width="48" height="48" />
+        <img src="${link("img/gks_logo_tp.png")}" alt="" class="logo-mark" width="48" height="48" />
+        <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="logo-text" width="140" height="40" />
       </a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
