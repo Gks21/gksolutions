@@ -50,7 +50,7 @@
   }
 
   const revealEls = document.querySelectorAll(
-    ".service-card, .expect-card, .feature-card, .path-card, .help-card, .audience-card, .step-card, .plan-card, .service-block, .trust-item, .about-inner, .hero-copy, .hero-visual, .hero-actions, .volunteer-content, .volunteer-form, .contact-info, .contact-form, .section-header, .tag-list, .process-steps, .page-hero .container, .booking-wizard, .service-catalog, .audience-list, .steps-row, .split-block"
+    ".service-card, .expect-card, .feature-card, .path-card, .help-card, .audience-card, .step-card, .plan-card, .service-block, .trust-item, .about-inner, .hero-copy, .hero-visual, .hero-actions, .volunteer-content, .volunteer-form, .contact-info, .contact-form, .section-header, .tag-list, .process-steps, .page-hero .container, .booking-wizard, .service-catalog, .audience-list, .steps-row, .split-block, .service-panel, .audience-scale-card, .teaser-card, .support-option, .process-row, .roadmap-card, .feature-split, .intro-prose, .media-rate-card, .pricing-panel, .cta-book"
   );
   revealEls.forEach((el) => el.classList.add("reveal"));
 
@@ -210,6 +210,34 @@
         useFormData: true,
       });
     });
+  }
+
+  const pricingSwitcher = document.getElementById("pricing-switcher");
+  if (pricingSwitcher) {
+    const tabs = [...pricingSwitcher.querySelectorAll("[data-panel]")];
+    const panels = [...document.querySelectorAll(".pricing-panel[data-panel]")];
+
+    function showPanel(id) {
+      const valid = tabs.some((tab) => tab.dataset.panel === id);
+      const next = valid ? id : "individual";
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.panel === next;
+        tab.setAttribute("aria-selected", selected);
+      });
+      panels.forEach((panel) => {
+        panel.hidden = panel.dataset.panel !== next;
+      });
+      if (history.replaceState) {
+        history.replaceState(null, "", `#${next}`);
+      }
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => showPanel(tab.dataset.panel));
+    });
+
+    const hash = window.location.hash.replace("#", "");
+    showPanel(hash);
   }
 
   const volunteerForm = document.getElementById("volunteer-form");
