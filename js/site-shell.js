@@ -31,6 +31,7 @@
         { label: "Nonprofits", href: "nonprofits.html" },
         { label: "Pricing", href: "pricing.html" },
         { label: "Policies", href: "policies.html" },
+        { label: "Terms & Agreement", href: "terms.html" },
       ],
     },
     {
@@ -68,8 +69,8 @@
     <nav class="header-bar" aria-label="Main">
       <div class="header-inner">
         <a href="${link("index.html")}" class="logo">
-          <img src="${link("img/gks_logo_tp.png")}" alt="" class="logo-mark" width="48" height="48" />
-          <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="logo-text" width="140" height="40" />
+            <img src="${link("img/gks_round_web.png")}" alt="GK Solutions" class="logo-mark" width="48" height="48" />
+            <img src="${link("img/gks_txt_tp.png")}" alt="" class="logo-text" width="140" height="40" />
         </a>
         <div class="header-end">
           <ul class="nav-links" id="nav-links">
@@ -99,7 +100,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="${link("index.html")}" class="brand brand--footer">
-          <img src="${link("img/gks_logo_tp.png")}" alt="" class="brand-mark" width="48" height="48" />
+          <img src="${link("img/gks_round_web.png")}" alt="" class="brand-mark" width="48" height="48" />
           <img src="${link("img/gks_txt_tp.png")}" alt="GK Solutions" class="brand-text" width="140" height="40" />
         </a>
         <p class="footer-domain">gks.software</p>

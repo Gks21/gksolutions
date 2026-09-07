@@ -7,10 +7,10 @@
   --border-hover: rgba(255, 255, 255, 0.22);
   --text: #f5f5f5;
   --text-muted: #9a9a9a;
-  --accent: #2596be;
-  --accent-light: #2596be;
-  --accent-dim: rgba(37, 150, 190, 0.14);
-  --accent-glow: rgba(37, 150, 190, 0.32);
+  --accent: #e7661a;
+  --accent-light: #e7661a;
+  --accent-dim: rgba(231, 102, 26, 0.14);
+  --accent-glow: rgba(231, 102, 26, 0.32);
   --sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --display: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --radius: 4px;
@@ -18,7 +18,7 @@
   --radius-xl: 8px;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 16px 40px rgba(0, 8, 20, 0.45);
-  --shadow-glow: 0 0 0 1px rgba(37, 150, 190, 0.28);
+  --shadow-glow: 0 0 0 1px rgba(231, 102, 26, 0.28);
   --transition: 0.2s ease;
   --rail-h: 36px;
   --nav-h: 76px;
@@ -125,7 +125,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   gap: 12px;
   flex-shrink: 0;
 }
-.logo-mark { height: 40px; width: auto; display: block; }
+.logo-mark { height: 44px; width: 44px; object-fit: contain; display: block; border-radius: 50%; }
 .logo-text { height: 28px; width: auto; display: block; }
 
 .header-end {
@@ -150,7 +150,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .brand-text { width: auto; display: block; }
 .brand--about .brand-mark { height: 120px; }
 .brand--about .brand-text { height: 64px; }
-.brand--footer .brand-mark { height: 44px; }
+.brand--footer .brand-mark { height: 44px; width: 44px; border-radius: 50%; object-fit: contain; }
 .brand--footer .brand-text { height: 32px; }
 
 .nav-links {
@@ -177,12 +177,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   background: var(--accent-dim);
   color: var(--accent) !important;
   border-radius: var(--radius);
-  border: 1px solid rgba(37, 150, 190, 0.3);
+  border: 1px solid rgba(231, 102, 26, 0.3);
   transition: background var(--transition), border-color var(--transition) !important;
 }
 .nav-cta:hover {
-  background: rgba(37, 150, 190, 0.22);
-  border-color: rgba(37, 150, 190, 0.45);
+  background: rgba(231, 102, 26, 0.22);
+  border-color: rgba(231, 102, 26, 0.45);
 }
 
 .nav-toggle {
@@ -219,7 +219,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .btn-primary {
   background: var(--accent);
-  color: #061018;
+  color: #111111;
 }
 .btn-primary:hover {
   filter: brightness(1.08);
@@ -258,7 +258,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 70% at 85% 20%, rgba(37, 150, 190, 0.16) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 70% at 85% 20%, rgba(231, 102, 26, 0.16) 0%, transparent 55%),
     var(--bg);
 }
 
@@ -299,7 +299,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   padding: 28px 16px;
   border: 1px solid var(--border);
   background:
-    radial-gradient(220px circle at var(--mx) var(--my), rgba(37, 150, 190, 0.16), transparent 55%),
+    radial-gradient(220px circle at var(--mx) var(--my), rgba(231, 102, 26, 0.16), transparent 55%),
     #111111;
 }
 
@@ -456,7 +456,7 @@ section { padding-block: var(--section-pad); }
   box-shadow: var(--shadow-sm);
 }
 .service-card:hover {
-  border-color: rgba(37, 150, 190, 0.25);
+  border-color: rgba(231, 102, 26, 0.25);
   transform: translateY(-3px);
   box-shadow: var(--shadow-md), var(--shadow-glow);
 }
@@ -557,7 +557,7 @@ section { padding-block: var(--section-pad); }
 /* ── Volunteer / Community ───────────────────────────────────── */
 .volunteer {
   background:
-    radial-gradient(ellipse 60% 50% at 0% 50%, rgba(37, 150, 190, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 0% 50%, rgba(231, 102, 26, 0.05) 0%, transparent 50%),
     var(--bg);
 }
 
@@ -973,7 +973,7 @@ section { padding-block: var(--section-pad); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 80% at 0% 0%, rgba(37, 150, 190, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 80% at 0% 0%, rgba(231, 102, 26, 0.08) 0%, transparent 55%),
     var(--bg);
   pointer-events: none;
 }
@@ -1099,7 +1099,7 @@ body.has-mobile-actions {
   height: 100%;
 }
 a.feature-card:hover {
-  border-color: rgba(37, 150, 190, 0.4);
+  border-color: rgba(231, 102, 26, 0.4);
   background: #1b1b1b;
 }
 .feature-card h3 {
@@ -1132,7 +1132,7 @@ a.feature-card:hover {
   height: 100%;
 }
 a.audience-card:hover {
-  border-color: rgba(37, 150, 190, 0.4);
+  border-color: rgba(231, 102, 26, 0.4);
   background: #1b1b1b;
 }
 .audience-card h3 {
@@ -1166,8 +1166,8 @@ a.audience-card:hover {
 }
 .path-card--primary {
   grid-row: 1 / span 2;
-  border-color: rgba(37, 150, 190, 0.45);
-  background: linear-gradient(180deg, rgba(37, 150, 190, 0.1) 0%, var(--bg-card) 42%);
+  border-color: rgba(231, 102, 26, 0.45);
+  background: linear-gradient(180deg, rgba(231, 102, 26, 0.1) 0%, var(--bg-card) 42%);
   padding: 36px;
 }
 .path-card--primary h3 {
@@ -1177,11 +1177,11 @@ a.audience-card:hover {
   letter-spacing: -0.03em;
 }
 a.path-card:hover {
-  border-color: rgba(37, 150, 190, 0.55);
+  border-color: rgba(231, 102, 26, 0.55);
   background: #1b1b1b;
 }
 a.path-card--primary:hover {
-  background: linear-gradient(180deg, rgba(37, 150, 190, 0.16) 0%, #1b1b1b 42%);
+  background: linear-gradient(180deg, rgba(231, 102, 26, 0.16) 0%, #1b1b1b 42%);
 }
 .path-label {
   font-size: 0.75rem;
@@ -1376,7 +1376,7 @@ a.path-card--primary:hover {
   height: 100%;
 }
 a.help-card:hover {
-  border-color: rgba(37, 150, 190, 0.45);
+  border-color: rgba(231, 102, 26, 0.45);
   background: #1b1b1b;
 }
 .help-card h3 {
@@ -1613,7 +1613,7 @@ body.nav-open {
   flex-direction: column;
 }
 .plan-card.featured {
-  border-color: rgba(37, 150, 190, 0.4);
+  border-color: rgba(231, 102, 26, 0.4);
   box-shadow: var(--shadow-glow);
 }
 .plan-name {
@@ -1793,7 +1793,7 @@ body.nav-open {
   transition: border-color var(--transition), background var(--transition);
 }
 .choice-btn:hover {
-  border-color: rgba(37, 150, 190, 0.35);
+  border-color: rgba(231, 102, 26, 0.35);
 }
 .choice-btn.selected {
   border-color: var(--accent);
@@ -1871,7 +1871,7 @@ body.nav-open {
   font-size: 0.9rem;
   transition: border-color var(--transition);
 }
-.time-slot:hover { border-color: rgba(37, 150, 190, 0.35); }
+.time-slot:hover { border-color: rgba(231, 102, 26, 0.35); }
 .time-slot.selected {
   border-color: var(--accent);
   background: var(--accent-dim);
@@ -2214,6 +2214,7 @@ body.nav-open {
 .hero-canvas-mark {
   width: min(280px, 72%);
   height: auto;
+  border-radius: 50%;
 }
 .hero-meta {
   max-width: 460px;
@@ -2235,7 +2236,7 @@ body.nav-open {
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 .service-panel:hover {
-  border-color: rgba(37, 150, 190, 0.45);
+  border-color: rgba(231, 102, 26, 0.45);
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
 }
@@ -2282,7 +2283,7 @@ body.nav-open {
 }
 .service-panel--media {
   background:
-    linear-gradient(180deg, rgba(37, 150, 190, 0.06), transparent 40%),
+    linear-gradient(180deg, rgba(231, 102, 26, 0.06), transparent 40%),
     var(--bg-card);
 }
 .service-panel--wide {
@@ -2305,7 +2306,7 @@ body.nav-open {
   transition: border-color var(--transition);
 }
 a.audience-scale-card:hover {
-  border-color: rgba(37, 150, 190, 0.45);
+  border-color: rgba(231, 102, 26, 0.45);
 }
 .audience-scale-card h3 {
   font-family: var(--display);
@@ -2320,9 +2321,9 @@ a.audience-scale-card:hover {
   flex-grow: 1;
 }
 .audience-scale-card--community {
-  border-color: rgba(37, 150, 190, 0.28);
+  border-color: rgba(231, 102, 26, 0.28);
   background:
-    linear-gradient(180deg, rgba(37, 150, 190, 0.08), transparent 50%),
+    linear-gradient(180deg, rgba(231, 102, 26, 0.08), transparent 50%),
     var(--bg-card);
 }
 .audience-note {
@@ -2395,8 +2396,8 @@ a.audience-scale-card:hover {
   padding: 28px;
   border: 1px solid var(--border);
   background:
-    linear-gradient(rgba(37, 150, 190, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 150, 190, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(231, 102, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(231, 102, 26, 0.04) 1px, transparent 1px),
     var(--bg-card);
   background-size: 24px 24px, 24px 24px, auto;
 }
@@ -2445,7 +2446,7 @@ a.audience-scale-card:hover {
   margin-top: 20px;
   padding: 18px 20px;
   border-left: 2px solid var(--accent);
-  background: rgba(37, 150, 190, 0.05);
+  background: rgba(231, 102, 26, 0.05);
 }
 .privacy-callout strong {
   display: block;
@@ -2489,7 +2490,7 @@ a.audience-scale-card:hover {
 /* ── Booking CTA ────────────────────────────────────────────── */
 .cta-book {
   background:
-    radial-gradient(ellipse 70% 80% at 80% 0%, rgba(37, 150, 190, 0.16), transparent 55%),
+    radial-gradient(ellipse 70% 80% at 80% 0%, rgba(231, 102, 26, 0.16), transparent 55%),
     #111111;
   border-block: 1px solid var(--border);
   text-align: left;
@@ -2571,7 +2572,7 @@ a.audience-scale-card:hover {
   border: 1px solid transparent;
 }
 .pricing-switcher button[aria-selected="true"] {
-  color: #061018;
+  color: #111111;
   background: var(--accent);
 }
 .pricing-panel[hidden] { display: none; }
@@ -2615,8 +2616,8 @@ a.audience-scale-card:hover {
 }
 .pricing-panel--nonprofit .rate-item:first-child,
 .pricing-panel--nonprofit .rate-item:nth-child(2) {
-  border-color: rgba(37, 150, 190, 0.4);
-  background: rgba(37, 150, 190, 0.06);
+  border-color: rgba(231, 102, 26, 0.4);
+  background: rgba(231, 102, 26, 0.06);
 }
 .pricing-emphasis {
   font-size: 1.05rem;
@@ -2627,8 +2628,8 @@ a.audience-scale-card:hover {
 .approved-zero {
   margin: 28px 0 16px;
   padding: 24px;
-  border: 1px solid rgba(37, 150, 190, 0.35);
-  background: rgba(37, 150, 190, 0.06);
+  border: 1px solid rgba(231, 102, 26, 0.35);
+  background: rgba(231, 102, 26, 0.06);
 }
 .approved-zero h3 {
   font-size: 1.1rem;
@@ -2726,7 +2727,7 @@ a.audience-scale-card:hover {
   height: 36px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(37, 150, 190, 0.4);
+  border: 1px solid rgba(231, 102, 26, 0.4);
   color: var(--accent);
   font-size: 0.85rem;
   font-weight: 700;

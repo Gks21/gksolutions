@@ -18,14 +18,18 @@ Multi-page service platform for GK Solutions — IT support, consulting, website
 | About | `about.html` | Company background |
 | Contact | `contact.html` | Contact form and business details |
 | Policies | `policies.html` | Deposits, cancellations, payment, data |
+| Terms | `terms.html` | Terms & Agreement for bookings and service |
+| 404 | `404.html` | Custom GitHub Pages not-found page |
 
 ## Preview locally
 
 ```bash
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 Visit [http://localhost:8080](http://localhost:8080).
+
+Live site: [https://gks.software](https://gks.software).
 
 ## Layout
 
@@ -49,4 +53,4 @@ Forms are handled in `js/main.js` (contact, quote) and `js/booking.js` (booking 
 
 ## Deploy
 
-Deploy to Netlify, Vercel, or GitHub Pages. HTTPS is required for form submissions.
+GitHub Pages deploys from `main` via `.github/workflows/static.yml` to [gks.software](https://gks.software). HTTPS is required for form submissions.
