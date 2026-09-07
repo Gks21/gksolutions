@@ -103,6 +103,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .header-rail a {
   color: var(--accent);
   font-weight: 600;
+  transition: opacity var(--transition);
+}
+.header-rail a:hover {
+  opacity: 0.85;
 }
 
 .header-bar {
@@ -165,8 +169,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   transition: color var(--transition);
   white-space: nowrap;
 }
-.nav-links a:hover,
-.nav-links a[aria-current="page"] { color: var(--text); }
+.nav-links a:hover { color: var(--text); }
+.nav-links a[aria-current="page"] { color: var(--accent-light); }
 
 .header-cta {
   flex-shrink: 0;
@@ -286,35 +290,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.hero-frame {
-  --mx: 50%;
-  --my: 40%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 28px 16px;
-  border: 1px solid var(--border);
-  background:
-    radial-gradient(220px circle at var(--mx) var(--my), rgba(231, 102, 26, 0.16), transparent 55%),
-    #111111;
-}
-
-.hero-brace {
-  font-family: var(--display);
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  user-select: none;
-}
-
-.hero-mark {
-  width: min(280px, 58vw);
-  height: auto;
 }
 
 .hero-headline {
@@ -1048,9 +1023,6 @@ section { padding-block: var(--section-pad); }
 .btn-sm {
   padding: 8px 16px;
   font-size: 0.85rem;
-}
-.nav-links a[aria-current="page"] {
-  color: var(--text);
 }
 
 /* Mobile sticky actions */
@@ -2197,22 +2169,13 @@ body.nav-open {
   border-block: 1px solid var(--border);
 }
 
-/* ── Homepage: abstract hero canvas ─────────────────────────── */
+/* ── Homepage hero mark ─────────────────────────────────────── */
 .hero--home {
   padding-block: clamp(56px, 9vw, 112px);
   overflow: hidden;
 }
-.hero-canvas {
-  position: relative;
-  width: min(400px, 100%);
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-}
 .hero-canvas-mark {
-  width: min(280px, 72%);
+  width: min(320px, 78%);
   height: auto;
   border-radius: 50%;
 }
@@ -2330,6 +2293,9 @@ a.audience-scale-card:hover {
   margin-top: 16px;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+.audience-scale + .audience-note + .section-footer-link {
+  margin-top: 20px;
 }
 
 /* ── Pricing teaser ─────────────────────────────────────────── */
@@ -2807,8 +2773,6 @@ a.audience-scale-card:hover {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .hero-visual { order: -1; }
-  .hero-mark { width: min(260px, 64%); }
 
   .mobile-actions {
     display: flex;
@@ -2817,10 +2781,14 @@ a.audience-scale-card:hover {
   body {
     padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
-  body[data-page="book"] .mobile-actions {
+  body[data-page="book"] .mobile-actions,
+  body[data-page="quote"] .mobile-actions,
+  body[data-page="contact"] .mobile-actions {
     display: none;
   }
-  body[data-page="book"] {
+  body[data-page="book"],
+  body[data-page="quote"],
+  body[data-page="contact"] {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
@@ -2878,12 +2846,6 @@ a.audience-scale-card:hover {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 36px;
-  }
-  .hero-visual {
-    order: -1;
-  }
-  .hero-mark {
-    width: min(240px, 70%);
   }
   .hero-actions {
     flex-direction: column;

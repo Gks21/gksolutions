@@ -47,17 +47,17 @@
           <div class="form-row">
             <div class="form-group">
               <label for="quote-name">Name</label>
-              <input type="text" id="quote-name" name="name" required placeholder="Your name" />
+              <input type="text" id="quote-name" name="name" required placeholder="Your name" autocomplete="name" />
             </div>
             <div class="form-group">
               <label for="quote-email">Email</label>
-              <input type="email" id="quote-email" name="email" required placeholder="you@example.com" />
+              <input type="email" id="quote-email" name="email" required placeholder="you@example.com" autocomplete="email" />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="quote-phone">Phone</label>
-            <input type="tel" id="quote-phone" name="phone" placeholder="(555) 555-5555" />
+            <label for="quote-phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="quote-phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" />
           </div>
 
           <div class="form-row">
@@ -72,8 +72,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="quote-org">Organization name <span class="optional">(if applicable)</span></label>
-              <input type="text" id="quote-org" name="organization" placeholder="Organization name" />
+            <label for="quote-org">Organization name <span class="optional">(if applicable)</span></label>
+            <input type="text" id="quote-org" name="organization" placeholder="Organization name" autocomplete="organization" />
             </div>
           </div>
 

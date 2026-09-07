@@ -4,12 +4,12 @@
   const p = base ? base + "/" : "";
 
   const navItems = [
-    { id: "home", label: "Home", href: "index.html" },
     { id: "services", label: "Services", href: "services.html" },
     { id: "pricing", label: "Pricing", href: "pricing.html" },
     { id: "support", label: "Support", href: "support-plans.html" },
     { id: "nonprofits", label: "Nonprofits", href: "nonprofits.html" },
     { id: "about", label: "About", href: "about.html" },
+    { id: "contact", label: "Contact", href: "contact.html" },
   ];
 
   const footerGroups = [
@@ -19,6 +19,7 @@
         { label: "IT Support", href: "services/it-support.html" },
         { label: "Consulting", href: "services/consulting.html" },
         { label: "Setups", href: "services/setup.html" },
+        { label: "Networks", href: "services/network.html" },
         { label: "Websites", href: "services/websites.html" },
         { label: "Software", href: "services/custom-software.html" },
         { label: "Media Conversion", href: "media-conversion.html" },
