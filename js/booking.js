@@ -1,6 +1,6 @@
 (function () {
   const FORM_ENDPOINT = "https://formsubmit.co/ajax/support@gks.software";
-  const TOTAL_STEPS = 8;
+  const TOTAL_STEPS = 7;
 
   const CLIENT_LABELS = {
     individual: "Individual",
@@ -250,7 +250,7 @@
       renderTimeSlots();
     }
 
-    if (step === 7) {
+    if (step === 6) {
       bookingNext.textContent = "Confirm booking request";
     } else if (step < TOTAL_STEPS) {
       bookingNext.textContent = "Continue";
@@ -323,7 +323,7 @@
         <dd>Yes — July 2026 Terms &amp; Agreement</dd>
       </dl>
       <div class="deposit-notice">
-        <p><strong>What's next:</strong> You'll receive a confirmation email with next steps. Payment processing will be connected soon; for now, submitting this form records your booking request and deposit agreement.</p>
+        <p><strong>What's next:</strong> You'll receive a confirmation email with next steps. We'll follow up to confirm the appointment and collect the $5 deposit then. This form only sends the booking request.</p>
         <p style="margin-top:8px"><strong>Preparation:</strong> Please have relevant devices accessible and any error messages or account details ready. For on-site visits, ensure someone is available at the scheduled time.</p>
         <p style="margin-top:8px"><strong>Contact:</strong> <a href="mailto:support@gks.software" style="color:var(--accent)">support@gks.software</a></p>
         <p style="margin-top:8px"><strong>Cancellation:</strong> Deposits are nonrefundable for missed appointments or cancellations within 24 hours. <a href="policies.html" style="color:var(--accent)">View policies →</a> · <a href="terms.html" style="color:var(--accent)">Terms &amp; Agreement →</a></p>
@@ -415,9 +415,9 @@
   bookingNext.addEventListener("click", async () => {
     if (!validateStep()) return;
 
-    if (state.step === 7) {
+    if (state.step === 6) {
       const ok = await submitBooking();
-      if (ok) showStep(8);
+      if (ok) showStep(7);
       return;
     }
 
