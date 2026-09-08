@@ -1,5 +1,4 @@
 (function () {
-  const FORM_ENDPOINT = "https://formsubmit.co/ajax/support@gks.software";
   const header = document.getElementById("header");
   const navToggle = document.getElementById("nav-toggle");
   const navLinks = document.getElementById("nav-links");
@@ -117,8 +116,13 @@
     if (note) note.hidden = true;
 
     try {
+      if (!window.GKS?.submitInquiry) {
+        throw new Error("The inquiry service is not available on this page.");
+      }
+
       const data = new FormData(form);
-      let response;
+      const inquiry = options.toInquiry(data);
+      let emailPayload;
 
       if (options.useFormData) {
         data.append("_subject", options.subject(data));
@@ -127,40 +131,14 @@
         const email = data.get("email");
         if (email) data.append("_replyto", email);
         data.delete("_gotcha");
-
-        response = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          body: data,
-        });
+        emailPayload = data;
       } else {
-        response = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(buildPayload(form, options)),
-        });
+        emailPayload = buildPayload(form, options);
       }
 
-      let result = {};
-      try {
-        result = await response.json();
-      } catch {
-        throw new Error("Unexpected response from the server.");
-      }
-
-      const failed =
-        !response.ok ||
-        result.success === false ||
-        result.success === "false";
-
-      if (failed) {
-        throw new Error(
-          result.message ||
-            "The form could not be sent. Please email support@gks.software directly."
-        );
-      }
+      await window.GKS.submitInquiry(inquiry, emailPayload, {
+        useFormData: Boolean(options.useFormData),
+      });
 
       form.reset();
       showFormNote(note, options.successMessage, "success");
@@ -184,6 +162,15 @@
         noteId: "form-note",
         successMessage: "Message sent — we'll get back to you soon.",
         subject: (data) => `Contact from ${data.get("name")}`,
+        toInquiry: (data) => ({
+          type: "CONTACT",
+          name: data.get("name"),
+          email: data.get("email"),
+          phone: data.get("phone") || "",
+          service: "Contact",
+          message: data.get("message") || "",
+          companyWebsite: data.get("companyWebsite") || "",
+        }),
       });
     });
   }
@@ -199,6 +186,29 @@
         subject: (data) =>
           `Quote request: ${data.get("project_type")} — ${data.get("name")}`,
         useFormData: true,
+        toInquiry: (data) => ({
+          type: "QUOTE",
+          clientType: window.GKS.mapClientType(data.get("client_type")),
+          name: data.get("name"),
+          email: data.get("email"),
+          phone: data.get("phone") || "",
+          service: data.get("project_type") || "Quote request",
+          message: [
+            data.get("description"),
+            data.get("current_problem") && `Current problem: ${data.get("current_problem")}`,
+            data.get("desired_outcome") && `Desired outcome: ${data.get("desired_outcome")}`,
+            data.get("existing_systems") && `Existing systems: ${data.get("existing_systems")}`,
+          ]
+            .filter(Boolean)
+            .join("\n\n"),
+          companyWebsite: data.get("companyWebsite") || "",
+          details: {
+            organization: data.get("organization") || "",
+            timeline: data.get("timeline") || "",
+            budget: data.get("budget") || "",
+            contactMethod: data.get("contact_method") || "",
+          },
+        }),
       });
     });
   }
@@ -240,6 +250,16 @@
         successMessage: "Message sent — we'll be in touch if it's a good fit.",
         subject: (data) =>
           `Community inquiry — ${data.get("organization") || data.get("name")}`,
+        toInquiry: (data) => ({
+          type: "COMMUNITY",
+          name: data.get("name"),
+          email: data.get("email"),
+          phone: data.get("phone") || "",
+          service: "Community inquiry",
+          message: data.get("message") || "",
+          companyWebsite: data.get("companyWebsite") || "",
+          details: { organization: data.get("organization") || "" },
+        }),
       });
     });
   }

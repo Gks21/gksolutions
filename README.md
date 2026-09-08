@@ -43,14 +43,18 @@ python3 scripts/generate-services.py
 
 ## Contact forms
 
-Forms submit to **support@gks.software** via [FormSubmit](https://formsubmit.co).
+Booking, quote, and contact forms POST to the GK Solutions API (`/api/inquiries`) so the Android app can pull them. FormSubmit to **support@gks.software** is kept as an email backup if the API is unreachable.
+
+Local pages talk to `http://localhost:8787`. The live site talks to `https://api.gks.software`.
+
+See `api/README.md` for API setup.
 
 **Requirements:**
 - Site must be served over HTTP/HTTPS (not opened as a `file://` page)
-- First submission triggers an activation email to support@gks.software — click the link to enable delivery
+- For local form tests, run the API (`cd api && npm run dev`) alongside `python3 -m http.server 8080`
 
-Forms are handled in `js/main.js` (contact, quote) and `js/booking.js` (booking wizard).
+Forms are handled in `js/inquiries-api.js`, `js/main.js` (contact, quote), and `js/booking.js` (booking wizard).
 
 ## Deploy
 
-GitHub Pages deploys from `main` via `.github/workflows/static.yml` to [gks.software](https://gks.software). HTTPS is required for form submissions.
+GitHub Pages deploys from `main` via `.github/workflows/static.yml` to [gks.software](https://gks.software). The `api/` service is not part of Pages — host it separately over HTTPS.
