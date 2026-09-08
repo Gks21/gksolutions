@@ -202,11 +202,11 @@ app.use((_req, res) => {
   res.status(404).json({ error: "Not found" });
 });
 
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, "0.0.0.0", () => {
   if (!APP_API_KEY || APP_API_KEY === "change-me-to-a-long-random-secret") {
     console.warn("APP_API_KEY is still the example value. Android GET /api/inquiries will be rejected.");
   }
-  console.log(`GK Solutions API listening on http://127.0.0.1:${PORT} (${store.kind})`);
+  console.log(`GK Solutions API listening on 0.0.0.0:${PORT} (${store.kind})`);
 });
 
 async function shutdown() {

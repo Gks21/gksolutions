@@ -57,4 +57,6 @@ Forms are handled in `js/inquiries-api.js`, `js/main.js` (contact, quote), and `
 
 ## Deploy
 
-GitHub Pages deploys from `main` via `.github/workflows/static.yml` to [gks.software](https://gks.software). The `api/` service is not part of Pages — host it separately over HTTPS.
+**Website:** GitHub Pages deploys from `main` via `.github/workflows/static.yml` to [gks.software](https://gks.software).
+
+**API:** GitHub Pages cannot run it. Host `api/` on Render (or similar) over HTTPS and point `api.gks.software` at that service. Step-by-step: [`api/README.md`](api/README.md#how-to-host-this-the-website-is-already-hosted).
