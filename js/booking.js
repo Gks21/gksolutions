@@ -1,5 +1,4 @@
 (function () {
-  const FORM_ENDPOINT = "https://formsubmit.co/ajax/support@gks.software";
   const TOTAL_STEPS = 7;
 
   const CLIENT_LABELS = {
@@ -336,7 +335,8 @@
 
     const formData = new FormData(intakeForm);
     const honeypot = intakeForm.querySelector('[name="_gotcha"]');
-    if (honeypot?.value) {
+    const websiteHoneypot = intakeForm.querySelector('[name="companyWebsite"]');
+    if (honeypot?.value || websiteHoneypot?.value) {
       showError("Something went wrong. Please try again.");
       return false;
     }
@@ -374,19 +374,43 @@
       return false;
     }
 
+    if (!window.GKS?.submitInquiry) {
+      showError("The inquiry service is not available on this page.");
+      return false;
+    }
+
+    const inquiry = {
+      type: "BOOKING",
+      clientType: window.GKS.mapClientType(state.clientType),
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone") || "",
+      service: getServiceLabel(state.service),
+      message: [
+        formData.get("need"),
+        formData.get("previous") && `Previously: ${formData.get("previous")}`,
+        formData.get("deadline") && `Deadline: ${formData.get("deadline")}`,
+        formData.get("data") && `Files or data involved: ${formData.get("data")}`,
+      ]
+        .filter(Boolean)
+        .join("\n\n"),
+      deviceOrSystem: formData.get("device") || "",
+      remoteOrOnsite: window.GKS.mapLocation(formData.get("location")),
+      preferredDateTime: window.GKS.preferredDateTime(bookingDate.value, state.selectedTime),
+      companyWebsite: formData.get("companyWebsite") || "",
+      details: {
+        appointmentDate: bookingDate.value,
+        appointmentTime: state.selectedTime,
+        deposit: "$5.00",
+        termsVersion: "July 2026",
+      },
+    };
+
     bookingNext.disabled = true;
     bookingNext.textContent = "Submitting…";
 
     try {
-      const response = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const result = await response.json().catch(() => ({}));
-      if (!response.ok || result.success === false) {
-        throw new Error(result.message || "Booking could not be submitted.");
-      }
+      await window.GKS.submitInquiry(inquiry, payload);
       buildConfirmation();
       state.submitted = true;
       return true;

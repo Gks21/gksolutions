@@ -1,0 +1,27 @@
+# Render Blueprint — New → Blueprint, then connect this repo.
+# Creates the API web service and a small Postgres so inquiries survive deploys.
+# Copy APP_API_KEY from Render → Environment after the first deploy and store it
+# in the Android app later. Do not put it in website JavaScript.
+
+databases:
+  - name: gks-inquiries
+    plan: basic-256mb
+
+services:
+  - type: web
+    name: gks-api
+    runtime: docker
+    dockerfilePath: api/Dockerfile
+    dockerContext: api
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: https://gks.software
+      - key: APP_API_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gks-inquiries
+          property: connectionString
